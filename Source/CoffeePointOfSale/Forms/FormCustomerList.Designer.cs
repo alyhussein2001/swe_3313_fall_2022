@@ -35,13 +35,12 @@ namespace CoffeePointOfSale.Forms
             // 
             // bMM_CustList
             // 
-            this.bMM_CustList.BackColor = System.Drawing.Color.SteelBlue;
-            this.bMM_CustList.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bMM_CustList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.bMM_CustList.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bMM_CustList.ForeColor = System.Drawing.Color.Transparent;
-            this.bMM_CustList.Location = new System.Drawing.Point(12, 553);
-            this.bMM_CustList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bMM_CustList.Location = new System.Drawing.Point(57, 525);
             this.bMM_CustList.Name = "bMM_CustList";
-            this.bMM_CustList.Size = new System.Drawing.Size(206, 108);
+            this.bMM_CustList.Size = new System.Drawing.Size(191, 81);
             this.bMM_CustList.TabIndex = 0;
             this.bMM_CustList.Text = "Main Menu";
             this.bMM_CustList.UseVisualStyleBackColor = false;
@@ -49,13 +48,12 @@ namespace CoffeePointOfSale.Forms
             // 
             // addCust
             // 
-            this.addCust.BackColor = System.Drawing.Color.SteelBlue;
-            this.addCust.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addCust.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.addCust.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.addCust.ForeColor = System.Drawing.Color.Transparent;
-            this.addCust.Location = new System.Drawing.Point(1112, 553);
-            this.addCust.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.addCust.Location = new System.Drawing.Point(1071, 525);
             this.addCust.Name = "addCust";
-            this.addCust.Size = new System.Drawing.Size(206, 108);
+            this.addCust.Size = new System.Drawing.Size(204, 81);
             this.addCust.TabIndex = 1;
             this.addCust.Text = "Add Customer";
             this.addCust.UseVisualStyleBackColor = false;
@@ -63,29 +61,29 @@ namespace CoffeePointOfSale.Forms
             // 
             // listBox1
             // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.listBox1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listBox1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox1.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 45;
-
-            this.listBox1.Location = new System.Drawing.Point(79, 24);
+            this.listBox1.ItemHeight = 33;
+            this.listBox1.Location = new System.Drawing.Point(73, 28);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1176, 499);
-
+            this.listBox1.Size = new System.Drawing.Size(1216, 396);
             this.listBox1.TabIndex = 2;
+            this.listBox1.UseTabStops = false;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // FormCustomerList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1330, 674);
-            
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(223)))), ((int)(((byte)(225)))));
+            this.ClientSize = new System.Drawing.Size(1332, 682);
             this.Controls.Add(this.listBox1);
-
             this.Controls.Add(this.addCust);
             this.Controls.Add(this.bMM_CustList);
-            this.Margin = new System.Windows.Forms.Padding(3, 12, 3, 12);
+            this.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.Name = "FormCustomerList";
             this.Text = "FormCustomerList";
             this.Load += new System.EventHandler(this.FormCustomerList_Load);

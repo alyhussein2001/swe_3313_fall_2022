@@ -1,13 +1,15 @@
-﻿using System;
+﻿using CoffeePointOfSale.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace CoffeePointOfSale.Services.Payment {
     public class PaymentHandler {
         private Order.Order currentOrder;
-        private Form paymentScreenForm;
+        private FormPayment formPayment;
 
         public PaymentHandler() {
 
@@ -15,7 +17,8 @@ namespace CoffeePointOfSale.Services.Payment {
 
         public void GoToReceipt(bool withCard) {
             if (withCard) {
-                GetCardNumber();
+               // GetCardNumber();
+
             }
             else {
                 //look at reward points
@@ -27,12 +30,8 @@ namespace CoffeePointOfSale.Services.Payment {
             this.currentOrder = currentOrder;
         }
 
-        public void SetPaymentScreenForm(Form paymentScreenForm) {
-            this.paymentScreenForm = paymentScreenForm;
-        }
-
-        public void CancelOrder() {
-            //go back to FormMain
+        public void SetPaymentScreenForm(FormPayment paymentScreenForm) {
+            this.formPayment = paymentScreenForm;
         }
 
         private void DisplayCustomerName() {
@@ -43,10 +42,8 @@ namespace CoffeePointOfSale.Services.Payment {
             //display Total on form element
         }
 
-        private string GetCardNumber() {
-            string cardNumber = "";
-
-            //get card number from input element on form
+        public string GetCardNumber(String cardNumber) {
+          
 
             if (ValidateCardNumber(cardNumber)) {
                 return cardNumber;

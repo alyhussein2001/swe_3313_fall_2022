@@ -49,7 +49,7 @@ namespace CoffeePointOfSale.Forms
         private void DemonstrateGettingCustomerList()
         {
             int top = 5;
-            int left = 950;
+            int left = 900;
             var customerList = _customerService.Customers.List;
             for (var customerIdx = 0; customerIdx < customerList.Count; customerIdx++)
             {
@@ -65,15 +65,17 @@ namespace CoffeePointOfSale.Forms
         {
 
             Button button = new Button();
-            button.Size = new Size(100, 35);
-            button.Font = new Font("Segoe UI", 7);
+            button.Size = new Size(120, 50);
+            button.Font = new Font("Century Gothic", 9);
+            string hexColor = "#47525E";
+            Color buttonColor = System.Drawing.ColorTranslator.FromHtml(hexColor); 
 
             button.Name = customer.Phone;
 
             button.Text = "Order Drink";
             button.ForeColor = Color.Transparent;
             button.TextAlign = ContentAlignment.MiddleCenter;
-            button.BackColor = Color.SteelBlue;
+            button.BackColor = buttonColor;
             button.Left = left;
             button.Top = top;
             this.Controls.Add(button);
@@ -84,6 +86,8 @@ namespace CoffeePointOfSale.Forms
             listBox1.Controls.Add(button);
             button.Dock = DockStyle.None;
             button.BringToFront();
+            button.TextAlign = ContentAlignment.MiddleCenter;
+
 
         }
         private void orderDrinkClick(object sender, EventArgs e)

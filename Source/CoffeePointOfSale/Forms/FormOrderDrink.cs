@@ -33,7 +33,7 @@ namespace CoffeePointOfSale.Forms
         
         private void FormOrderDrink_Load(object sender, EventArgs e)
         {
-            
+            label2.Text = "";
             FormMain.currentOrder = new Order();
             FormMain.currentOrder.Customer = FormMain.currentCustomer;
 
@@ -73,14 +73,8 @@ namespace CoffeePointOfSale.Forms
 
         private void addDrink_Click(object sender, EventArgs e) {
             CurrentDrink newDrink = new CurrentDrink();
-            Drink drinkItem = new Drink();
-
-            foreach (Drink drink in FormMain.drinkMenu) { 
-                if (drink.Name == listBox1.SelectedItem.ToString()) {
-                    drinkItem = drink;
-                }
-            }
-
+            Drink drinkItem = GetDrinkFromMenu(listBox1.SelectedItem.ToString());
+            Debug.WriteLine(drinkItem.Name);
             newDrink.Name = drinkItem.Name;
 
             string customs = "";
@@ -106,11 +100,43 @@ namespace CoffeePointOfSale.Forms
             }
             newDrink.Total = total;
 
+            Debug.WriteLine(newDrink.Name + "   " + newDrink.Customizations + "   " + newDrink.Total);
+
             FormMain.currentOrder.AddDrink(newDrink);
             DisplayOrder();
         }
 
+        private Drink GetDrinkFromMenu(string drinkName) {
+            foreach (Drink drink in FormMain.drinkMenu) {
+                if (drink.Name == drinkName) {
+                    return drink;
+                }
+            }
+
+            return null;
+        }
+
         private void DisplayOrder() {
+            Drink drinkItem = new Drink();
+            List<Customization> customs = new List<Customization>();
+            foreach (CurrentDrink currentDrink in FormMain.currentOrder.Drinks){
+                Debug.WriteLine(currentDrink.Name);
+                drinkItem = GetDrinkFromMenu(currentDrink.Name);
+                foreach (Customization custom in drinkItem.Customizations) {
+                    foreach (string CustomName in listBox2.SelectedItems) {
+                        if (custom.Name == CustomName) {
+                            customs.Add(custom);
+                        }
+                    }
+                }
+
+
+                label2.Text += "$" + currentDrink.Total + "     " + currentDrink.Name + "\n";
+
+                foreach (Customization custom in customs) {
+                    label2.Text += "     $" + custom.Price + "     " + custom.Name + "\n";
+                }
+            }
             
         }
     }

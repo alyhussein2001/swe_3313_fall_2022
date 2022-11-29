@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoffeePointOfSale.Services.Drink {
-    public class Drink {
+namespace CoffeePointOfSale.Services.CurrentDrink {
+    public class CurrentDrink {
         private string name;
         private string customizations;
         private decimal total;
 
-        public Drink() {
+        public CurrentDrink() {
             name = "";
             customizations = "";
             total = new decimal(0.00);

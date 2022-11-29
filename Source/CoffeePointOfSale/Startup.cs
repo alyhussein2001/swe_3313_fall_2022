@@ -6,7 +6,6 @@ using CoffeePointOfSale.Forms.Base;
 using CoffeePointOfSale.Services.Customer;
 using CoffeePointOfSale.Services.DrinkMenu;
 using CoffeePointOfSale.Services.FormFactory;
-using CoffeePointOfSale.Services.Menu;
 using CoffeePointOfSale.Services.Storage;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

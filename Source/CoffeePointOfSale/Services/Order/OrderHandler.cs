@@ -22,7 +22,7 @@ namespace CoffeePointOfSale.Services.Order {
         }
 
         public void AddDrinkToOrder() {
-            Drink.Drink newDrink = new Drink.Drink();
+            CurrentDrink.CurrentDrink newDrink = new CurrentDrink.CurrentDrink();
             newDrink.Name = GetDrink();
             newDrink.Customizations = GetCustomizations();
             newDrink.Total = CalculateTotal();

@@ -1,6 +1,7 @@
 {
   "Customers": {
     "anonymous": {
+      "FirstName": "Anonymous",
       "Phone": "anonymous",
       "RewardPoints": 0
     },

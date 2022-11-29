@@ -14,9 +14,10 @@ using System.Windows.Forms;
 
 
 namespace CoffeePointOfSale.Forms
-{
+{//joel
     public partial class FormCustomerList : Base.FormNoCloseBase
     {
+        private int test;
         private IAppSettings? _appSettings;
         private readonly ICustomerService _customerService;
         List<Button> buttons = new List<Button>();

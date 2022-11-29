@@ -30,6 +30,12 @@ namespace CoffeePointOfSale.Forms
 
         private void FormPayment_Load(object sender, EventArgs e)
         {
+            if (FormMain.currentCustomer.Phone == "anonymous")
+            {
+                payPoints.Enabled = false;
+            }
+            else label5.Text = $"{FormMain.currentCustomer.RewardPoints}";
+            
            // Debug.WriteLine("hello");
            // Debug.WriteLine(_customerService.Customers["404-444-5555"].ToString());
         }

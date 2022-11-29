@@ -12,7 +12,7 @@ public class DrinkMenuService : IDrinkMenuService
     public DrinkMenuService(IStorageService storageService)
     {
         _storageService = storageService;
-        DrinkMenu = _storageService.Read<DrinkMenu>();
+        //DrinkMenu = _storageService.Read<DrinkMenu>();
     }
 
     public void Write() => _storageService.Write(DrinkMenu);

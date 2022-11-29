@@ -1,4 +1,4 @@
-﻿using CoffeePointOfSale.Configuration;
+using CoffeePointOfSale.Configuration;
 using CoffeePointOfSale.Services.Customer;
 using CoffeePointOfSale.Services.FormFactory;
 using Microsoft.Extensions.Logging;
@@ -17,6 +17,7 @@ namespace CoffeePointOfSale.Forms
 {
     public partial class FormCustomerList : Base.FormNoCloseBase
     {
+        
         private IAppSettings? _appSettings;
         private readonly ICustomerService _customerService;
         List<Button> buttons = new List<Button>();
@@ -54,8 +55,10 @@ namespace CoffeePointOfSale.Forms
             {
                 var customer = customerList[customerIdx];
                 listBox1.Items.Add($"{customerIdx + 1}. {customer}{Environment.NewLine}");
-                CreateButton(customer, top, left);
-                top += 50;
+
+                CreateButton(customer, top, left );
+                top += 45;
+
             }
         }
         private void CreateButton(Customer customer, int top, int left)
@@ -64,7 +67,9 @@ namespace CoffeePointOfSale.Forms
             Button button = new Button();
             button.Size = new Size(100, 35);
             button.Font = new Font("Segoe UI", 7);
-            button.Name = customer.FirstName;
+
+            button.Name = customer.Phone;
+
             button.Text = "Order Drink";
             button.ForeColor = Color.Transparent;
             button.TextAlign = ContentAlignment.MiddleCenter;
@@ -92,7 +97,5 @@ namespace CoffeePointOfSale.Forms
         {
 
         }
-
-       
     }
 }

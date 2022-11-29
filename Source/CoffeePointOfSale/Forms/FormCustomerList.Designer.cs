@@ -1,4 +1,4 @@
-﻿namespace CoffeePointOfSale.Forms
+namespace CoffeePointOfSale.Forms
 {
     partial class FormCustomerList
     {
@@ -67,9 +67,11 @@
             this.listBox1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 45;
-            this.listBox1.Location = new System.Drawing.Point(67, 33);
+
+            this.listBox1.Location = new System.Drawing.Point(79, 24);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1194, 499);
+            this.listBox1.Size = new System.Drawing.Size(1176, 499);
+
             this.listBox1.TabIndex = 2;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -78,9 +80,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1330, 674);
+            
+            this.Controls.Add(this.listBox1);
+
             this.Controls.Add(this.addCust);
             this.Controls.Add(this.bMM_CustList);
-            this.Controls.Add(this.listBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 12, 3, 12);
             this.Name = "FormCustomerList";
             this.Text = "FormCustomerList";

@@ -47,22 +47,23 @@ namespace CoffeePointOfSale.Forms
 
         private void DemonstrateGettingCustomerList()
         {
-            int top = 40;
+            int top = 5;
             int left = 950;
             var customerList = _customerService.Customers.List;
             for (var customerIdx = 0; customerIdx < customerList.Count; customerIdx++)
             {
                 var customer = customerList[customerIdx];
                 listBox1.Items.Add($"{customerIdx + 1}. {customer}{Environment.NewLine}");
-                CreateButton(customer,top,left);
+                CreateButton(customer, top, left);
                 top += 50;
             }
         }
-        private void CreateButton(Customer customer,int top, int left)
+        private void CreateButton(Customer customer, int top, int left)
         {
 
             Button button = new Button();
-            button.Size = new Size(100, 27);
+            button.Size = new Size(100, 35);
+            button.Font = new Font("Segoe UI", 7);
             button.Name = customer.FirstName;
             button.Text = "Order Drink";
             button.ForeColor = Color.Transparent;
@@ -73,9 +74,14 @@ namespace CoffeePointOfSale.Forms
             this.Controls.Add(button);
             button.Click += new EventHandler(orderDrinkClick);
             buttons.Add(button);
-            
+
+
+            listBox1.Controls.Add(button);
+            button.Dock = DockStyle.None;
+            button.BringToFront();
+
         }
-         private void orderDrinkClick(object sender, EventArgs e)
+        private void orderDrinkClick(object sender, EventArgs e)
 
         {
             Close();

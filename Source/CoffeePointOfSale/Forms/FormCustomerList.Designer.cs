@@ -31,7 +31,6 @@
             this.bMM_CustList = new System.Windows.Forms.Button();
             this.addCust = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bMM_CustList
@@ -68,27 +67,17 @@
             this.listBox1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 45;
-            this.listBox1.Location = new System.Drawing.Point(118, 33);
+            this.listBox1.Location = new System.Drawing.Point(67, 33);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(818, 499);
+            this.listBox1.Size = new System.Drawing.Size(1194, 499);
             this.listBox1.TabIndex = 2;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1064, 270);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
             // 
             // FormCustomerList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1330, 674);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.addCust);
             this.Controls.Add(this.bMM_CustList);
             this.Controls.Add(this.listBox1);
@@ -97,7 +86,6 @@
             this.Text = "FormCustomerList";
             this.Load += new System.EventHandler(this.FormCustomerList_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -106,7 +94,6 @@
         private Button bMM_CustList;
         private Button addCust;
         private ListBox listBox1;
-        private Label label1;
         //private Button button;
     }
 }

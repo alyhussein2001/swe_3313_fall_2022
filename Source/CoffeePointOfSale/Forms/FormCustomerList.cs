@@ -1,4 +1,4 @@
-﻿using CoffeePointOfSale.Configuration;
+using CoffeePointOfSale.Configuration;
 using CoffeePointOfSale.Services.Customer;
 using CoffeePointOfSale.Services.FormFactory;
 using Microsoft.Extensions.Logging;
@@ -17,6 +17,7 @@ namespace CoffeePointOfSale.Forms
 {
     public partial class FormCustomerList : Base.FormNoCloseBase
     {
+        
         private IAppSettings? _appSettings;
         private readonly ICustomerService _customerService;
         List<Button> buttons = new List<Button>();
@@ -47,23 +48,28 @@ namespace CoffeePointOfSale.Forms
 
         private void DemonstrateGettingCustomerList()
         {
-            int top = 40;
+            int top = 5;
             int left = 950;
             var customerList = _customerService.Customers.List;
             for (var customerIdx = 0; customerIdx < customerList.Count; customerIdx++)
             {
                 var customer = customerList[customerIdx];
                 listBox1.Items.Add($"{customerIdx + 1}. {customer}{Environment.NewLine}");
-                CreateButton(customer,top,left);
-                top += 50;
+
+                CreateButton(customer, top, left );
+                top += 45;
+
             }
         }
-        private void CreateButton(Customer customer,int top, int left)
+        private void CreateButton(Customer customer, int top, int left)
         {
 
             Button button = new Button();
-            button.Size = new Size(100, 27);
-            button.Name = customer.FirstName;
+            button.Size = new Size(100, 35);
+            button.Font = new Font("Segoe UI", 7);
+
+            button.Name = customer.Phone;
+
             button.Text = "Order Drink";
             button.ForeColor = Color.Transparent;
             button.TextAlign = ContentAlignment.MiddleCenter;
@@ -73,9 +79,14 @@ namespace CoffeePointOfSale.Forms
             this.Controls.Add(button);
             button.Click += new EventHandler(orderDrinkClick);
             buttons.Add(button);
-            
+
+
+            listBox1.Controls.Add(button);
+            button.Dock = DockStyle.None;
+            button.BringToFront();
+
         }
-         private void orderDrinkClick(object sender, EventArgs e)
+        private void orderDrinkClick(object sender, EventArgs e)
 
         {
             Close();
@@ -86,7 +97,5 @@ namespace CoffeePointOfSale.Forms
         {
 
         }
-
-       
     }
 }

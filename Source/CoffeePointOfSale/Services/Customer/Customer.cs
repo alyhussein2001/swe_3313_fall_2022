@@ -4,6 +4,7 @@ namespace CoffeePointOfSale.Services.Customer;
 
 public class Customer
 {
+    private int emily; 
     public const string AnonymousCustomerId = "anonymous";
 
     private string _firstName = "";

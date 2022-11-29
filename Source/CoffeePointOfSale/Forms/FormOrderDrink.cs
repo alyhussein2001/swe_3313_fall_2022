@@ -30,13 +30,19 @@ namespace CoffeePointOfSale.Forms
         
         private void FormOrderDrink_Load(object sender, EventArgs e)
         {
-            
-            IReadOnlyList<Drink> drinkMenu = _drinkMenuService.DrinkMenu.List;
-            custName.Text = FormMain.currentCustomer.FirstName + " " + FormMain.currentCustomer.LastName; //drinkMenu.Count.ToString();
-            for (int drinkIdx = 0; drinkIdx < drinkMenu.Count; drinkIdx++) {
-                Drink drink = drinkMenu[drinkIdx];
-                listBox1.Items.Add(drink.Name);
-            }
+            //sets customer name on diplay
+            custName.Text = FormMain.currentCustomer.FirstName + " " + FormMain.currentCustomer.LastName;
+
+            listBox1.Items.Add("Latte");
+            listBox1.Items.Add("Iced Latte");
+            listBox1.Items.Add("Coffee");
+
+
+            //IReadOnlyList<Drink> drinkMenu = _drinkMenuService.DrinkMenu.List;
+            //for (int drinkIdx = 0; drinkIdx < drinkMenu.Count; drinkIdx++) {
+            //    Drink drink = drinkMenu[drinkIdx];
+            //    listBox1.Items.Add(drink.Name);
+            //}
         }
 
         private void orderDrink_Close_Click(object sender, EventArgs e)
@@ -49,6 +55,23 @@ namespace CoffeePointOfSale.Forms
         {
             Hide();
             FormFactory.Get<FormPayment>().Show();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {
+            listBox2.Items.Clear();
+            string selected = listBox1.SelectedItem.ToString();
+            //IReadOnlyList<Drink> drinkMenu = _drinkMenuService.DrinkMenu.List;
+            List<Drink> drinkMenu = new List<Drink>();
+            Drink drinkTemp = new Drink();
+            drinkTemp.Name = "Coffee";
+            //drinkTemp.Customizations = 
+            foreach (Drink drink in drinkMenu) {
+                if (drink.Name == selected) {
+                    foreach (Customization customization in drink.Customizations) {
+                        listBox2.Items.Add(customization.Name);
+                    }
+                }
+            }
         }
     }
 }

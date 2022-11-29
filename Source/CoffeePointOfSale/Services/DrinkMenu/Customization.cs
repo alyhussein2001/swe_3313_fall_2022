@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CoffeePointOfSale.Services.DrinkMenu {
-    internal class DrinkMenu {
+    public class Customization {
+        private string name;
+        private decimal price;
+
 
     }
 }

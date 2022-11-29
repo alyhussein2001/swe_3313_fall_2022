@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoffeePointOfSale.Services.Order {
     public class Order {
-        private List<Drink.Drink> drinks;
+        private List<CurrentDrink.CurrentDrink> drinks;
         private decimal tax;
         private decimal subtotal;
         private decimal total;
@@ -14,7 +14,7 @@ namespace CoffeePointOfSale.Services.Order {
         private Customer.Customer customer;
 
         public Order() {
-            drinks = new List<Drink.Drink>();
+            drinks = new List<CurrentDrink.CurrentDrink>();
             tax = new decimal(0.00);
             subtotal = new decimal(0.00);
             total = new decimal(0.00);
@@ -27,7 +27,7 @@ namespace CoffeePointOfSale.Services.Order {
         public string PaymentMethod { get; set; }
         public CoffeePointOfSale.Services.Customer.Customer Customer { get; set; }
 
-        public void AddDrink(Drink.Drink newDrink) {
+        public void AddDrink(CurrentDrink.CurrentDrink newDrink) {
             drinks.Add(newDrink);
         }
     }

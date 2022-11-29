@@ -1,4 +1,5 @@
 ﻿using CoffeePointOfSale.Forms;
+using CreditCardValidator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,8 @@ namespace CoffeePointOfSale.Services.Payment {
 
         public void GoToReceipt(bool withCard) {
             if (withCard) {
-               // GetCardNumber();
+                // GetCardNumber();
+               // CreditCardDetector detector = new CreditCardDetector("4012 8888 8888 1881");
 
             }
             else {

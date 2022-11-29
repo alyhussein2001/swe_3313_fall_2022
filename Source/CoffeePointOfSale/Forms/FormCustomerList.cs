@@ -86,8 +86,6 @@ namespace CoffeePointOfSale.Forms
             listBox1.Controls.Add(button);
             button.Dock = DockStyle.None;
             button.BringToFront();
-            button.TextAlign = ContentAlignment.MiddleCenter;
-
 
         }
         private void orderDrinkClick(object sender, EventArgs e)

@@ -31,6 +31,12 @@ namespace CoffeePointOfSale.Forms
         private void FormOrderDrink_Load(object sender, EventArgs e)
         {
             
+            IReadOnlyList<Drink> drinkMenu = _drinkMenuService.DrinkMenu.List;
+            custName.Text = drinkMenu.Count.ToString();
+            for (int drinkIdx = 0; drinkIdx < drinkMenu.Count; drinkIdx++) {
+                Drink drink = drinkMenu[drinkIdx];
+                listBox1.Items.Add(drink.Name);
+            }
         }
 
         private void orderDrink_Close_Click(object sender, EventArgs e)

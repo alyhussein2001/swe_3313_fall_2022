@@ -6,11 +6,9 @@ namespace CoffeePointOfSale.Services.DrinkMenu {
         [JsonProperty("DrinkMenu")]
         private readonly Dictionary<string, Drink> _drinkDict = new();
 
-        [JsonIgnore] //not written to JSON file... this is a list view of the dictionary, so only the dictionary is written
+        [JsonIgnore]
         public IReadOnlyList<Drink> List =>
         _drinkDict.Select(c => c.Value)
             .ToList();
-
-
     }
 }

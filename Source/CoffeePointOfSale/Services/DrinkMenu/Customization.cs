@@ -9,6 +9,7 @@ namespace CoffeePointOfSale.Services.DrinkMenu {
         private string name;
         private decimal price;
 
-
+        public string Name { get; set; }
+        public decimal Price { get; set; }
     }
 }

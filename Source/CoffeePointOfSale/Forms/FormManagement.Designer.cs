@@ -35,9 +35,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(187, 35);
+            this.btnClose.Location = new System.Drawing.Point(164, 26);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(94, 29);
+            this.btnClose.Size = new System.Drawing.Size(82, 22);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -47,31 +48,34 @@
             // 
             this.txtDeleteThis.AcceptsReturn = true;
             this.txtDeleteThis.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDeleteThis.Location = new System.Drawing.Point(187, 109);
+            this.txtDeleteThis.Location = new System.Drawing.Point(164, 82);
+            this.txtDeleteThis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDeleteThis.Multiline = true;
             this.txtDeleteThis.Name = "txtDeleteThis";
-            this.txtDeleteThis.Size = new System.Drawing.Size(550, 100);
+            this.txtDeleteThis.Size = new System.Drawing.Size(482, 76);
             this.txtDeleteThis.TabIndex = 1;
             this.txtDeleteThis.TextChanged += new System.EventHandler(this.txtDeleteThis_TextChanged);
             // 
             // lblRemoveThis
             // 
             this.lblRemoveThis.AutoSize = true;
-            this.lblRemoveThis.Location = new System.Drawing.Point(187, 87);
+            this.lblRemoveThis.Location = new System.Drawing.Point(164, 65);
             this.lblRemoveThis.Name = "lblRemoveThis";
-            this.lblRemoveThis.Size = new System.Drawing.Size(177, 20);
+            this.lblRemoveThis.Size = new System.Drawing.Size(140, 15);
             this.lblRemoveThis.TabIndex = 2;
             this.lblRemoveThis.Text = "Demo - Remove This Box";
             // 
             // FormManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1330, 674);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(223)))), ((int)(((byte)(225)))));
+            this.ClientSize = new System.Drawing.Size(1332, 682);
             this.Controls.Add(this.lblRemoveThis);
             this.Controls.Add(this.txtDeleteThis);
             this.Controls.Add(this.btnClose);
-            this.Margin = new System.Windows.Forms.Padding(3);
+            this.Enabled = false;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormManagement";
             this.Text = "FormManagement";
             this.Load += new System.EventHandler(this.OnLoadFormManagement);

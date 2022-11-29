@@ -6,6 +6,10 @@ namespace CoffeePointOfSale.Forms;
 
 public partial class FormMain : FormBase
 {
+
+    public static Services.Customer.Customer currentCustomer;
+    public static Services.Order.Order currentOrder;
+    
     public FormMain(IAppSettings appSettings) : base(appSettings)
     {
         InitializeComponent();

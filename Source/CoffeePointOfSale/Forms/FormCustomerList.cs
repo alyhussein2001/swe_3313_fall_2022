@@ -95,7 +95,7 @@ namespace CoffeePointOfSale.Forms
             {
                 if (btn.Name == customer.Phone)
                 {
-                    //_customerService.SetCurrentCustomer(customer);
+                    FormMain.currentCustomer = customer;
                 }
             }
 

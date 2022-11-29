@@ -10,6 +10,7 @@ public class Customer
     private string _lastName = "";
     private string _phone = ""; //backing field for Phone property. only needed because the setter has logic to handle nulls and trimming spaces.
     private int _rewardPoints;
+    private List<Order.Order> orderHistory = new List<Order.Order>();
 
     public virtual string FirstName
     {
@@ -49,6 +50,22 @@ public class Customer
             _rewardPoints = value;
         }
     }
+
+    //start - this is code that i (Mason) added but have a question about
+    public List<Order.Order> OrderHistory
+    {
+        get => OrderHistory;
+        set {
+            if (IsAnonymous) return; 
+            OrderHistory = value;
+        }
+    }
+
+    public void AddOrderToHistory(Order.Order newOrder) {
+        orderHistory.Add(newOrder);
+    }
+    //end
+
 
     [JsonIgnore]
     public virtual bool IsAnonymous => Phone == AnonymousCustomerId;

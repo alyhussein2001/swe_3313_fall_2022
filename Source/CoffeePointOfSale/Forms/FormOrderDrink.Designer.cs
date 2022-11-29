@@ -60,6 +60,7 @@
             this.addDrink.TabIndex = 1;
             this.addDrink.Text = "Add Drink";
             this.addDrink.UseVisualStyleBackColor = false;
+            this.addDrink.Click += new System.EventHandler(this.addDrink_Click);
             // 
             // callPayment
             // 
@@ -97,6 +98,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(421, 510);
             this.listBox1.TabIndex = 4;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // listBox2
             // 
@@ -108,6 +110,7 @@
             this.listBox2.Location = new System.Drawing.Point(502, 105);
             this.listBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox2.Name = "listBox2";
+            this.listBox2.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox2.Size = new System.Drawing.Size(346, 418);
             this.listBox2.TabIndex = 5;
             // 

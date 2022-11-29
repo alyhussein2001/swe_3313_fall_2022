@@ -76,6 +76,10 @@ namespace CoffeePointOfSale.Forms
         {
 
         }
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
 
 
         private void phoneNumber_TextChanged(object sender, EventArgs e)

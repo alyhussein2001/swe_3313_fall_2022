@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 
 namespace CoffeePointOfSale.Forms
-{//joel
+{
     public partial class FormCustomerList : Base.FormNoCloseBase
     {
-        private int test;
+        
         private IAppSettings? _appSettings;
         private readonly ICustomerService _customerService;
         List<Button> buttons = new List<Button>();
@@ -48,22 +48,23 @@ namespace CoffeePointOfSale.Forms
 
         private void DemonstrateGettingCustomerList()
         {
-            int top = 40;
+            int top = 5;
             int left = 950;
             var customerList = _customerService.Customers.List;
             for (var customerIdx = 0; customerIdx < customerList.Count; customerIdx++)
             {
                 var customer = customerList[customerIdx];
                 listBox1.Items.Add($"{customerIdx + 1}. {customer}{Environment.NewLine}");
-                CreateButton(customer,top,left);
-                top += 50;
+                CreateButton(customer, top, left );
+                top += 45;
             }
         }
         private void CreateButton(Customer customer,int top, int left)
         {
 
             Button button = new Button();
-            button.Size = new Size(100, 27);
+            button.Size = new Size(100, 35);
+            button.Font = new Font("Segoe UI", 7);
             button.Name = customer.FirstName;
             button.Text = "Order Drink";
             button.ForeColor = Color.Transparent;
@@ -75,6 +76,14 @@ namespace CoffeePointOfSale.Forms
             button.Click += new EventHandler(orderDrinkClick);
             buttons.Add(button);
             
+            //button.Visible = true;
+            //newButton.BackColor = Color.SteelBlue;
+            //newButton.ForeColor = Color.Transparent;
+
+            listBox1.Controls.Add(button);
+            button.Dock = DockStyle.None;
+            button.BringToFront();
+
         }
          private void orderDrinkClick(object sender, EventArgs e)
 
@@ -88,6 +97,9 @@ namespace CoffeePointOfSale.Forms
 
         }
 
-       
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

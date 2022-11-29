@@ -32,7 +32,7 @@ namespace CoffeePointOfSale.Forms
         {
             
             IReadOnlyList<Drink> drinkMenu = _drinkMenuService.DrinkMenu.List;
-            custName.Text = drinkMenu.Count.ToString();
+            custName.Text = FormMain.currentCustomer.FirstName + " " + FormMain.currentCustomer.LastName; //drinkMenu.Count.ToString();
             for (int drinkIdx = 0; drinkIdx < drinkMenu.Count; drinkIdx++) {
                 Drink drink = drinkMenu[drinkIdx];
                 listBox1.Items.Add(drink.Name);

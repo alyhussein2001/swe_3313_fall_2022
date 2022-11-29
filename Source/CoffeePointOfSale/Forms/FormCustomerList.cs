@@ -65,7 +65,7 @@ namespace CoffeePointOfSale.Forms
             Button button = new Button();
             button.Size = new Size(100, 35);
             button.Font = new Font("Segoe UI", 7);
-            button.Name = customer.FirstName;
+            button.Name = customer.Phone;
             button.Text = "Order Drink";
             button.ForeColor = Color.Transparent;
             button.TextAlign = ContentAlignment.MiddleCenter;
@@ -90,11 +90,6 @@ namespace CoffeePointOfSale.Forms
         }
         
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

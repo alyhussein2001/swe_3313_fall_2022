@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,8 @@ namespace CoffeePointOfSale.Forms
 
         private void FormPayment_Load(object sender, EventArgs e)
         {
-
+            Debug.WriteLine("hello");
+            Debug.WriteLine(_customerService.Customers["404-444-5555"].ToString());
         }
 
         private void Cancel_Payment_Click(object sender, EventArgs e)

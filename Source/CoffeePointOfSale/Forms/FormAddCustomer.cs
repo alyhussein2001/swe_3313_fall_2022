@@ -28,6 +28,7 @@ namespace CoffeePointOfSale.Forms
         private void FormAddCustomer_Load(object sender, EventArgs e)
         {
             error.Hide();
+            cust_data_error.Hide();
         }
 
         private void FirstName(object sender, EventArgs e)
@@ -57,10 +58,17 @@ namespace CoffeePointOfSale.Forms
                     RewardPoints = 0,
 
                 };
-                _customerService.Customers.Add(newCust);
+                if (_customerService.Customers[newCust.Phone] == null)
+                {
+                    _customerService.Customers.Add(newCust);
+                }
+                else cust_data_error.Show();
+                    
             }
             
         }
+
+        
 
         private void phoneNumber_TextChanged(object sender, EventArgs e)
         {

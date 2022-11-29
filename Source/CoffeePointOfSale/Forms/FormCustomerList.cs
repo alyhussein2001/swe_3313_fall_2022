@@ -89,9 +89,21 @@ namespace CoffeePointOfSale.Forms
         private void orderDrinkClick(object sender, EventArgs e)
 
         {
+            Button btn = (Button)sender;
+            var customerList = _customerService.Customers.List;
+            foreach (Customer customer in customerList)
+            {
+                if (btn.Name == customer.Phone)
+                {
+                    //_customerService.SetCurrentCustomer(customer);
+                }
+            }
+
+
             // JOEL
             // Write whatever customer was just clicked on to the Customer Service here...something like this:
             // _customerService.SetCurrentCustomer(this.customer)
+
             Close();
             FormFactory.Get<FormOrderDrink>().Show();
         }

@@ -37,6 +37,7 @@
             this.addNew = new System.Windows.Forms.Button();
             this.addCust_Cancel = new System.Windows.Forms.Button();
             this.error = new System.Windows.Forms.Label();
+            this.cust_data_error = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // firstLabel
@@ -139,11 +140,24 @@
             this.error.TabIndex = 9;
             this.error.Text = "All fields must be filled!";
             // 
+            // cust_data_error
+            // 
+            this.cust_data_error.AutoSize = true;
+            this.cust_data_error.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cust_data_error.ForeColor = System.Drawing.Color.Red;
+            this.cust_data_error.Location = new System.Drawing.Point(549, 534);
+            this.cust_data_error.Name = "cust_data_error";
+            this.cust_data_error.Size = new System.Drawing.Size(363, 28);
+            this.cust_data_error.TabIndex = 10;
+            this.cust_data_error.Text = "This customer is already in the database!";
+            
+            // 
             // FormAddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1330, 674);
+            this.Controls.Add(this.cust_data_error);
             this.Controls.Add(this.error);
             this.Controls.Add(this.addCust_Cancel);
             this.Controls.Add(this.addNew);
@@ -172,5 +186,6 @@
         private Button addNew;
         private Button addCust_Cancel;
         private Label error;
+        private Label cust_data_error;
     }
 }

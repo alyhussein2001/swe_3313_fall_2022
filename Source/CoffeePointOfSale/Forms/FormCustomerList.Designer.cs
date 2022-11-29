@@ -64,6 +64,7 @@ namespace CoffeePointOfSale.Forms
             // listBox1
             // 
             this.listBox1.BackColor = System.Drawing.SystemColors.Menu;
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBox1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 45;

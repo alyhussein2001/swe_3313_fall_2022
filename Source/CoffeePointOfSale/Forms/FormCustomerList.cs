@@ -89,6 +89,16 @@ namespace CoffeePointOfSale.Forms
         private void orderDrinkClick(object sender, EventArgs e)
 
         {
+            Button btn = (Button)sender;
+            var customerList = _customerService.Customers.List;
+            foreach (Customer customer in customerList)
+            {
+                if (btn.Name == customer.Phone)
+                {
+                    //_customerService.SetCurrentCustomer(customer);
+                }
+            }
+
             Close();
             FormFactory.Get<FormOrderDrink>().Show();
         }

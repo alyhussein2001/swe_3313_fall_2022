@@ -76,9 +76,6 @@ namespace CoffeePointOfSale.Forms
             button.Click += new EventHandler(orderDrinkClick);
             buttons.Add(button);
             
-            //button.Visible = true;
-            //newButton.BackColor = Color.SteelBlue;
-            //newButton.ForeColor = Color.Transparent;
 
             listBox1.Controls.Add(button);
             button.Dock = DockStyle.None;

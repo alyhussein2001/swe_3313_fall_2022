@@ -36,12 +36,13 @@ sealed partial class FormMain
             // btnManagement
             // 
             this.btnManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnManagement.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnManagement.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnManagement.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnManagement.ForeColor = System.Drawing.Color.Transparent;
-            this.btnManagement.Location = new System.Drawing.Point(473, 451);
+            this.btnManagement.Location = new System.Drawing.Point(414, 380);
+            this.btnManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnManagement.Name = "btnManagement";
-            this.btnManagement.Size = new System.Drawing.Size(423, 211);
+            this.btnManagement.Size = new System.Drawing.Size(545, 119);
             this.btnManagement.TabIndex = 0;
             this.btnManagement.Text = "Management";
             this.btnManagement.UseVisualStyleBackColor = false;
@@ -49,13 +50,12 @@ sealed partial class FormMain
             // 
             // bCustList
             // 
-            this.bCustList.BackColor = System.Drawing.Color.SteelBlue;
-            this.bCustList.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bCustList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.bCustList.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.bCustList.ForeColor = System.Drawing.Color.Transparent;
-            this.bCustList.Location = new System.Drawing.Point(473, 232);
-            this.bCustList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bCustList.Location = new System.Drawing.Point(414, 237);
             this.bCustList.Name = "bCustList";
-            this.bCustList.Size = new System.Drawing.Size(423, 211);
+            this.bCustList.Size = new System.Drawing.Size(545, 119);
             this.bCustList.TabIndex = 1;
             this.bCustList.Text = "Customer List";
             this.bCustList.UseVisualStyleBackColor = false;
@@ -63,13 +63,12 @@ sealed partial class FormMain
             // 
             // bOrderDrink
             // 
-            this.bOrderDrink.BackColor = System.Drawing.Color.SteelBlue;
-            this.bOrderDrink.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bOrderDrink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.bOrderDrink.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.bOrderDrink.ForeColor = System.Drawing.Color.Transparent;
-            this.bOrderDrink.Location = new System.Drawing.Point(473, 13);
-            this.bOrderDrink.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bOrderDrink.Location = new System.Drawing.Point(414, 84);
             this.bOrderDrink.Name = "bOrderDrink";
-            this.bOrderDrink.Size = new System.Drawing.Size(423, 211);
+            this.bOrderDrink.Size = new System.Drawing.Size(545, 119);
             this.bOrderDrink.TabIndex = 2;
             this.bOrderDrink.Text = "Order Drink";
             this.bOrderDrink.UseVisualStyleBackColor = false;
@@ -77,13 +76,14 @@ sealed partial class FormMain
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1330, 674);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(223)))), ((int)(((byte)(225)))));
+            this.ClientSize = new System.Drawing.Size(1332, 682);
             this.Controls.Add(this.bOrderDrink);
             this.Controls.Add(this.bCustList);
             this.Controls.Add(this.btnManagement);
-            this.Margin = new System.Windows.Forms.Padding(3);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormMain";

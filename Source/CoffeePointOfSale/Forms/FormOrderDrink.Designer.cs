@@ -39,11 +39,17 @@
             // orderDrink_Close
             // 
             this.orderDrink_Close.BackColor = System.Drawing.Color.Firebrick;
-            this.orderDrink_Close.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.orderDrink_Close.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.orderDrink_Close.ForeColor = System.Drawing.Color.Transparent;
+<<<<<<< HEAD
             this.orderDrink_Close.Location = new System.Drawing.Point(708, 10);
             this.orderDrink_Close.Name = "orderDrink_Close";
             this.orderDrink_Close.Size = new System.Drawing.Size(121, 41);
+=======
+            this.orderDrink_Close.Location = new System.Drawing.Point(22, 16);
+            this.orderDrink_Close.Name = "orderDrink_Close";
+            this.orderDrink_Close.Size = new System.Drawing.Size(155, 62);
+>>>>>>> main
             this.orderDrink_Close.TabIndex = 0;
             this.orderDrink_Close.Text = "Cancel";
             this.orderDrink_Close.UseVisualStyleBackColor = false;
@@ -51,25 +57,38 @@
             // 
             // addDrink
             // 
-            this.addDrink.BackColor = System.Drawing.Color.SteelBlue;
-            this.addDrink.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addDrink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.addDrink.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.addDrink.ForeColor = System.Drawing.Color.Transparent;
+<<<<<<< HEAD
             this.addDrink.Location = new System.Drawing.Point(668, 393);
             this.addDrink.Name = "addDrink";
             this.addDrink.Size = new System.Drawing.Size(160, 64);
+=======
+            this.addDrink.Location = new System.Drawing.Point(666, 566);
+            this.addDrink.Name = "addDrink";
+            this.addDrink.Size = new System.Drawing.Size(182, 68);
+>>>>>>> main
             this.addDrink.TabIndex = 1;
             this.addDrink.Text = "Add Drink";
             this.addDrink.UseVisualStyleBackColor = false;
             // 
             // callPayment
             // 
-            this.callPayment.BackColor = System.Drawing.Color.SteelBlue;
-            this.callPayment.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.callPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(141)))), ((int)(((byte)(91)))));
+            this.callPayment.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.callPayment.ForeColor = System.Drawing.Color.Transparent;
+<<<<<<< HEAD
             this.callPayment.Location = new System.Drawing.Point(1025, 454);
             this.callPayment.Name = "callPayment";
             this.callPayment.Size = new System.Drawing.Size(129, 42);
+=======
+            this.callPayment.Location = new System.Drawing.Point(1116, 568);
+            this.callPayment.Name = "callPayment";
+            this.callPayment.Size = new System.Drawing.Size(188, 64);
+>>>>>>> main
             this.callPayment.TabIndex = 2;
+            this.callPayment.TabStop = false;
             this.callPayment.Text = "Payment";
             this.callPayment.UseVisualStyleBackColor = false;
             this.callPayment.Click += new System.EventHandler(this.callPayment_Click);
@@ -77,45 +96,73 @@
             // custName
             // 
             this.custName.AutoSize = true;
+<<<<<<< HEAD
             this.custName.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.custName.Location = new System.Drawing.Point(989, 16);
             this.custName.Name = "custName";
             this.custName.Size = new System.Drawing.Size(90, 37);
+=======
+            this.custName.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custName.Location = new System.Drawing.Point(989, 16);
+            this.custName.Name = "custName";
+            this.custName.Size = new System.Drawing.Size(96, 33);
+>>>>>>> main
             this.custName.TabIndex = 3;
             this.custName.Text = "label1";
             // 
             // listBox1
             // 
-            this.listBox1.BackColor = System.Drawing.Color.SteelBlue;
-            this.listBox1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.listBox1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox1.ForeColor = System.Drawing.Color.Transparent;
             this.listBox1.FormattingEnabled = true;
+<<<<<<< HEAD
             this.listBox1.ItemHeight = 28;
             this.listBox1.Location = new System.Drawing.Point(19, 68);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(421, 396);
+=======
+            this.listBox1.ItemHeight = 23;
+            this.listBox1.Location = new System.Drawing.Point(22, 105);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(421, 510);
+>>>>>>> main
             this.listBox1.TabIndex = 4;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // listBox2
             // 
-            this.listBox2.BackColor = System.Drawing.Color.SteelBlue;
-            this.listBox2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.listBox2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox2.ForeColor = System.Drawing.Color.Transparent;
             this.listBox2.FormattingEnabled = true;
+<<<<<<< HEAD
             this.listBox2.ItemHeight = 28;
             this.listBox2.Location = new System.Drawing.Point(483, 68);
             this.listBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(346, 284);
+=======
+            this.listBox2.ItemHeight = 23;
+            this.listBox2.Location = new System.Drawing.Point(502, 105);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(346, 418);
+>>>>>>> main
             this.listBox2.TabIndex = 5;
             // 
             // FormOrderDrink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1164, 506);
+=======
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(223)))), ((int)(((byte)(225)))));
+            this.ClientSize = new System.Drawing.Size(1332, 682);
+>>>>>>> main
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.custName);

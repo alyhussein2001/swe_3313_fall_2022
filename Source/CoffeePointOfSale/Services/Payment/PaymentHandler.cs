@@ -9,28 +9,21 @@ using System.Text;
 using System.Threading.Tasks;
 using CoffeePointOfSale.Services.FormFactory;
 
+
 namespace CoffeePointOfSale.Services.Payment {
     public class PaymentHandler {
        private Order.Order currentOrder;
     private FormPayment formPayment;
 
-        public void GoToReceipt(bool withCard) {
-            if (withCard) {
 
+        public void GoToReceipt(bool withCard, string card) {
+
+            if (withCard) {
+                FormMain.currentOrder.PaymentMethod = "card" + card;
             }
             else {
-                
-
+                FormMain.currentOrder.PaymentMethod = "points";
             }
-            //share data and go to receipt form
-        }
-
-        public void SetCurrentOrder(Order.Order currentOrder) {
-            this.currentOrder = currentOrder;
-        }
-
-        public void SetPaymentScreenForm(FormPayment paymentScreenForm) {
-            this.formPayment = paymentScreenForm;
         }
 
         public string GetCardNumber(string cardNumber) {
@@ -59,7 +52,8 @@ namespace CoffeePointOfSale.Services.Payment {
             }
             return -1; 
         }
-                public bool CheckRewardPoints() 
+
+        public bool CheckRewardPoints() 
         {
             int neededPoints = (int)FormMain.currentOrder.Total * 10;
             return neededPoints <= GetTotalRewardPoints();
@@ -67,7 +61,7 @@ namespace CoffeePointOfSale.Services.Payment {
         } 
         private int GetTotalRewardPoints()
         {
-            return (int) FormMain.currentOrder.Customer.RewardPoints; 
+            return (int) FormMain.currentCustomer.RewardPoints; 
         }
        
  

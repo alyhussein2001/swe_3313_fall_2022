@@ -46,6 +46,7 @@
             this.payCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.payCard.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.payCard.ForeColor = System.Drawing.Color.Transparent;
+
             this.payCard.Location = new System.Drawing.Point(190, 401);
             this.payCard.Name = "payCard";
             this.payCard.Size = new System.Drawing.Size(204, 55);
@@ -86,7 +87,7 @@
             this.CCnumber.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CCnumber.Location = new System.Drawing.Point(126, 306);
             this.CCnumber.Name = "CCnumber";
-            this.CCnumber.Size = new System.Drawing.Size(338, 50);
+            this.CCnumber.Size = new System.Drawing.Size(338, 25);
             this.CCnumber.TabIndex = 3;
             this.CCnumber.TextChanged += new System.EventHandler(this.CCnumber_TextInput);
             // 

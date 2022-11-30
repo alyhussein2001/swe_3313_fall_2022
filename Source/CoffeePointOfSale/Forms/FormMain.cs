@@ -62,7 +62,8 @@ public partial class FormMain : FormBase
         FormMain.drinkMenu = drinkMenu;
     }
 
-    private void pictureBox1_Click(object sender, EventArgs e)
+
+    private void cafe404_Click(object sender, EventArgs e)
     {
 
     }

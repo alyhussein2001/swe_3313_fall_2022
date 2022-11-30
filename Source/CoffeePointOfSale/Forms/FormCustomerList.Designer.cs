@@ -61,16 +61,16 @@ namespace CoffeePointOfSale.Forms
             // 
             // listBox1
             // 
-
             this.listBox1.BackColor = System.Drawing.SystemColors.MenuBar;
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBox1.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 33;
-            this.listBox1.Location = new System.Drawing.Point(73, 28);
+            this.listBox1.Location = new System.Drawing.Point(0, -11);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1216, 396);
+            this.listBox1.Size = new System.Drawing.Size(1332, 693);
             this.listBox1.TabIndex = 2;
             this.listBox1.UseTabStops = false;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);

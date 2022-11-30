@@ -39,7 +39,11 @@ namespace CoffeePointOfSale.Services.Payment {
             
         }
         public bool ValidateCardNumber(string cardNumber) {
+<<<<<<< HEAD
             if (cardNumber == "" || !cardNumber.All(Char.IsDigit))
+=======
+            if (!cardNumber.All(Char.IsDigit) || cardNumber == "")
+>>>>>>> 87022521f8e29cd054f767a11a1cfe5bb633ef2a
             return false; 
             CreditCardDetector detector = new CreditCardDetector(cardNumber);
             // test: 4012888888881881 

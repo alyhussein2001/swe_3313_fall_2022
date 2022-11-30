@@ -33,6 +33,7 @@ namespace CoffeePointOfSale.Forms
         
         private void FormOrderDrink_Load(object sender, EventArgs e)
         {
+            callPayment.Enabled = false;
             richTextBox1.Text = "";
             richTextBox1.Padding = new Padding(15, 15, 15, 15);
             FormMain.currentOrder = new Order();
@@ -62,6 +63,10 @@ namespace CoffeePointOfSale.Forms
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {
             listBox2.Items.Clear();
+            if (listBox1.SelectedItem == null)
+            {
+                return;
+            }
             string selected = listBox1.SelectedItem.ToString();
             List<Drink> drinkMenu = FormMain.drinkMenu;
             foreach (Drink drink in drinkMenu) {
@@ -77,6 +82,10 @@ namespace CoffeePointOfSale.Forms
 
         private void addDrink_Click(object sender, EventArgs e) {
             CurrentDrink newDrink = new CurrentDrink();
+            if(listBox1.SelectedItem == null)
+            {
+                return;
+            }
             Drink drinkItem = GetDrinkFromMenu(listBox1.SelectedItem.ToString());
             Debug.WriteLine(drinkItem.Name);
             newDrink.Name = drinkItem.Name;
@@ -109,6 +118,7 @@ namespace CoffeePointOfSale.Forms
             FormMain.currentOrder.AddDrink(newDrink);
             DisplayOrder();
             SetAndDisplayTotals();
+            callPayment.Enabled = true;
         }
 
         private Drink GetDrinkFromMenu(string drinkName) {

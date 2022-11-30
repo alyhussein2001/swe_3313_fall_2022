@@ -33,7 +33,7 @@ namespace CoffeePointOfSale.Forms
         
         private void FormOrderDrink_Load(object sender, EventArgs e)
         {
-            label2.Text = "";
+            richTextBox1.Text = "";
             FormMain.currentOrder = new Order();
             FormMain.currentOrder.Customer = FormMain.currentCustomer;
 
@@ -104,6 +104,7 @@ namespace CoffeePointOfSale.Forms
 
             FormMain.currentOrder.AddDrink(newDrink);
             DisplayOrder();
+            SetAndDisplayTotals();
         }
 
         private Drink GetDrinkFromMenu(string drinkName) {
@@ -117,27 +118,54 @@ namespace CoffeePointOfSale.Forms
         }
 
         private void DisplayOrder() {
+            richTextBox1.Text = "";
             Drink drinkItem = new Drink();
-            List<Customization> customs = new List<Customization>();
             foreach (CurrentDrink currentDrink in FormMain.currentOrder.Drinks){
+                List<Customization> customs = new List<Customization>();
                 Debug.WriteLine(currentDrink.Name);
                 drinkItem = GetDrinkFromMenu(currentDrink.Name);
                 foreach (Customization custom in drinkItem.Customizations) {
-                    foreach (string CustomName in listBox2.SelectedItems) {
-                        if (custom.Name == CustomName) {
-                            customs.Add(custom);
-                        }
+                    if (currentDrink.Customizations.Contains(custom.Name)) {
+                        customs.Add(custom);
                     }
                 }
 
-
-                label2.Text += "$" + currentDrink.Total + "     " + currentDrink.Name + "\n";
+                richTextBox1.Text += "$" + GetDrinkFromMenu(currentDrink.Name).BasePrice + "     " + currentDrink.Name + "\n";
 
                 foreach (Customization custom in customs) {
-                    label2.Text += "     $" + custom.Price + "     " + custom.Name + "\n";
+                    if(custom.Price >= 0)
+                    {
+                        richTextBox1.Text += "     $" + custom.Price + "     " + custom.Name + "\n";
+                    }
+                    else
+                    {
+                        richTextBox1.Text += "    -$" + custom.Price.ToString().Remove(0,1) + "     " + custom.Name + "\n";
+                    }
+                    
                 }
             }
-            
+        }
+
+        private void SetAndDisplayTotals()
+        {
+            OrderHandler orderHandler = new OrderHandler();
+            decimal subtotal = orderHandler.CalculateSubtotal(FormMain.currentOrder);
+            label1.Text = "";
+            label1.Text = "Subtotal: $" + subtotal;
+
+            FormMain.currentOrder.Subtotal = subtotal;
+
+            decimal tax = orderHandler.CalculateTax(FormMain.currentOrder);
+            label2.Text = "";
+            label2.Text = "Tax: $" + tax.ToString("0.00");
+
+            FormMain.currentOrder.Tax = tax;
+
+            decimal total = orderHandler.CalculateTotal(FormMain.currentOrder);
+            label3.Text = "";
+            label3.Text = "Total: $" + total.ToString("0.00");
+
+            FormMain.currentOrder.Total = total;
         }
     }
 }

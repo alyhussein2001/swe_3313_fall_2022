@@ -40,7 +40,7 @@ namespace CoffeePointOfSale.Forms
             this.bMM_CustList.ForeColor = System.Drawing.Color.Transparent;
             this.bMM_CustList.Location = new System.Drawing.Point(57, 525);
             this.bMM_CustList.Name = "bMM_CustList";
-            this.bMM_CustList.Size = new System.Drawing.Size(191, 81);
+            this.bMM_CustList.Size = new System.Drawing.Size(198, 90);
             this.bMM_CustList.TabIndex = 0;
             this.bMM_CustList.Text = "Main Menu";
             this.bMM_CustList.UseVisualStyleBackColor = false;
@@ -53,7 +53,7 @@ namespace CoffeePointOfSale.Forms
             this.addCust.ForeColor = System.Drawing.Color.Transparent;
             this.addCust.Location = new System.Drawing.Point(1071, 525);
             this.addCust.Name = "addCust";
-            this.addCust.Size = new System.Drawing.Size(204, 81);
+            this.addCust.Size = new System.Drawing.Size(216, 90);
             this.addCust.TabIndex = 1;
             this.addCust.Text = "Add Customer";
             this.addCust.UseVisualStyleBackColor = false;

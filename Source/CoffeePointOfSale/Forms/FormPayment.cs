@@ -50,14 +50,18 @@ namespace CoffeePointOfSale.Forms
         private void payPoints_Click(object sender, EventArgs e)
         {
             paymentHandler.GetRewardPoints();
-            paymentHandler.GoToReceipt(false);
+            paymentHandler.GoToReceipt(false, "0");
+            this.Close();
+            FormFactory.Get<FormReceipt>().Show();
         }
 
         private void payCard_Click(object sender, EventArgs e)
         {
             //  Debug.Write(CCnumber.Text); 
-         paymentHandler.GetCardNumber(CCnumber.Text);
-         paymentHandler.GoToReceipt(true); 
+            paymentHandler.GetCardNumber(CCnumber.Text);
+            paymentHandler.GoToReceipt(true, CCnumber.Text);
+            this.Close();
+            FormFactory.Get<FormReceipt>().Show();
         }
 
         private void CCnumber_TextInput (object sender, EventArgs e)

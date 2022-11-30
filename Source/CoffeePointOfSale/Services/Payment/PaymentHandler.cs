@@ -6,34 +6,24 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CoffeePointOfSale.Services.FormFactory;
 
 
 namespace CoffeePointOfSale.Services.Payment {
     public class PaymentHandler {
-       private Order.Order currentOrder;
-       private FormPayment formPayment;
 
         public PaymentHandler() {
 
         }
 
-        public void GoToReceipt(bool withCard) {
-            if (withCard) {
+        public void GoToReceipt(bool withCard, string card) {
 
+            if (withCard) {
+                FormMain.currentOrder.PaymentMethod = "card" + card;
             }
             else {
-                
-
+                FormMain.currentOrder.PaymentMethod = "points";
             }
-            //share data and go to receipt form
-        }
-
-        public void SetCurrentOrder(Order.Order currentOrder) {
-            this.currentOrder = currentOrder;
-        }
-
-        public void SetPaymentScreenForm(FormPayment paymentScreenForm) {
-            this.formPayment = paymentScreenForm;
         }
 
         public string GetCardNumber(string cardNumber) {
@@ -64,7 +54,8 @@ namespace CoffeePointOfSale.Services.Payment {
                 
 
         }
-                public bool CheckRewardPoints() 
+
+        public bool CheckRewardPoints() 
         {
             //  Debug.Assert(currentOrder.Total >= 0);
             int neededPoints = (int)FormMain.currentOrder.Total * 10;

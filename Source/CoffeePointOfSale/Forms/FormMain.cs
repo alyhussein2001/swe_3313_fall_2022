@@ -61,4 +61,10 @@ public partial class FormMain : FormBase
         List<Drink> drinkMenu = JsonConvert.DeserializeObject<List<Drink>>(File.ReadAllText("JsonStorage/DrinkMenu.json"));
         FormMain.drinkMenu = drinkMenu;
     }
+
+
+    private void cafe404_Click(object sender, EventArgs e)
+    {
+
+    }
 }

@@ -46,8 +46,7 @@
             this.payCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.payCard.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.payCard.ForeColor = System.Drawing.Color.Transparent;
-
-            this.payCard.Location = new System.Drawing.Point(190, 401);
+            this.payCard.Location = new System.Drawing.Point(184, 401);
             this.payCard.Name = "payCard";
             this.payCard.Size = new System.Drawing.Size(204, 55);
             this.payCard.TabIndex = 0;
@@ -73,9 +72,9 @@
             this.Cancel_Payment.BackColor = System.Drawing.Color.Brown;
             this.Cancel_Payment.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Cancel_Payment.ForeColor = System.Drawing.Color.Transparent;
-            this.Cancel_Payment.Location = new System.Drawing.Point(55, 576);
+            this.Cancel_Payment.Location = new System.Drawing.Point(58, 527);
             this.Cancel_Payment.Name = "Cancel_Payment";
-            this.Cancel_Payment.Size = new System.Drawing.Size(151, 55);
+            this.Cancel_Payment.Size = new System.Drawing.Size(151, 69);
             this.Cancel_Payment.TabIndex = 2;
             this.Cancel_Payment.Text = "Cancel";
             this.Cancel_Payment.UseVisualStyleBackColor = false;
@@ -84,10 +83,10 @@
             // CCnumber
             // 
             this.CCnumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CCnumber.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CCnumber.Location = new System.Drawing.Point(126, 306);
+            this.CCnumber.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CCnumber.Location = new System.Drawing.Point(126, 317);
             this.CCnumber.Name = "CCnumber";
-            this.CCnumber.Size = new System.Drawing.Size(338, 25);
+            this.CCnumber.Size = new System.Drawing.Size(313, 33);
             this.CCnumber.TabIndex = 3;
             this.CCnumber.TextChanged += new System.EventHandler(this.CCnumber_TextInput);
             // 
@@ -110,7 +109,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.label2.Location = new System.Drawing.Point(139, 255);
+            this.label2.Location = new System.Drawing.Point(105, 255);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(313, 37);
             this.label2.TabIndex = 5;
@@ -121,7 +120,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.label3.Location = new System.Drawing.Point(869, 255);
+            this.label3.Location = new System.Drawing.Point(853, 255);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(373, 37);
             this.label3.TabIndex = 6;
@@ -146,9 +145,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.label5.Location = new System.Drawing.Point(1082, 316);
+            this.label5.Location = new System.Drawing.Point(954, 317);
+            this.label5.MinimumSize = new System.Drawing.Size(204, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 49);
+            this.label5.Size = new System.Drawing.Size(204, 49);
             this.label5.TabIndex = 8;
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -169,7 +169,7 @@
             this.invalidCard.AutoSize = true;
             this.invalidCard.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.invalidCard.ForeColor = System.Drawing.Color.Brown;
-            this.invalidCard.Location = new System.Drawing.Point(216, 375);
+            this.invalidCard.Location = new System.Drawing.Point(196, 369);
             this.invalidCard.Name = "invalidCard";
             this.invalidCard.Size = new System.Drawing.Size(153, 19);
             this.invalidCard.TabIndex = 10;

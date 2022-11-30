@@ -36,9 +36,22 @@ namespace CoffeePointOfSale.Forms
 
         private void FormPayment_Load(object sender, EventArgs e)
         {
+// UNSURE IF THIS CONFLICT IS FIXED CORRECTLY
+/*<<<<<<< HEAD
             if (FormMain.currentCustomer.Phone == "anonymous" || !paymentHandler.CheckRewardPoints())
             {
                 payPoints.Enabled = false;
+=======*/
+            if (FormMain.currentCustomer.Phone == "anonymous")//||) !paymentHandler.CheckRewardPoints())
+            {
+                payPoints.Enabled = false;
+                label5.Text = "N/A";
+            }
+            else if (FormMain.currentCustomer.Phone != "anonymous" && !paymentHandler.CheckRewardPoints())
+            {
+                payPoints.Enabled = false;
+                label5.Text = $"{FormMain.currentCustomer.RewardPoints}";
+/*>>>>>>> 5186079c76b54702f56e72f8e03ea7609164b0ab*/
             }
             else label5.Text = $"{FormMain.currentCustomer.RewardPoints}";
             label4.Text = FormMain.currentCustomer.FirstName + " " + FormMain.currentCustomer.LastName;
@@ -69,13 +82,15 @@ namespace CoffeePointOfSale.Forms
 
         private void payCard_Click(object sender, EventArgs e)
         {
-            //  Debug.Write(CCnumber.Text); 
-
-   
+            //  Debug.Write(CCnumber.Text);
             paymentHandler.GetCardNumber(CCnumber.Text);
             if (!paymentHandler.ValidateCardNumber(CCnumber.Text))
+            {
                 invalidCard.Show();
-            paymentHandler.GoToReceipt(true,CCnumber.Text);
+                return; 
+            } 
+            paymentHandler.GoToReceipt(true, CCnumber.Text);
+
             invalidCard.Hide(); 
 
             paymentHandler.GetCardNumber(CCnumber.Text);

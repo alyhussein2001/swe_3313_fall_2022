@@ -39,15 +39,16 @@ namespace CoffeePointOfSale.Forms
             FormMain.currentOrder.TransactionDate = DateTime.Now;
 
             richTextBox1.Text = "";
-            string display = "123 Kennesaw Road, Kennesaw, GA 30144\nCustomer Info:\n" + FormMain.currentCustomer.FirstName + " " + FormMain.currentCustomer.LastName + "\n";
+            string display = "\n123 Kennesaw Road, Kennesaw, GA 30144\n\nCustomer Info:\n"
+                + FormMain.currentCustomer.FirstName + " " + FormMain.currentCustomer.LastName + "\n";
 
             if(FormMain.currentOrder.PaymentMethod.Contains("card"))
             {
-                display += "Card Number: **** **** **** " + FormMain.currentOrder.PaymentMethod.Remove(0, 16) + "\n";
+                display += "\nCard Number: **** **** **** " + FormMain.currentOrder.PaymentMethod.Remove(0, 16) + "\n";
                 FormMain.currentOrder.PaymentMethod = FormMain.currentOrder.PaymentMethod.Remove(4, 16);
                 if (!FormMain.currentCustomer.IsAnonymous)
                 {
-                    display += "Points Earned: " + (int)FormMain.currentOrder.Total * 10 + "\n";
+                    display += "\nPoints Earned: " + (int)FormMain.currentOrder.Total * 10 + "\n";
                     FormMain.currentCustomer.RewardPoints += (int)FormMain.currentOrder.Total * 10;
                     FormMain.currentCustomer.AddOrderToHistory(FormMain.currentOrder);
                 }
@@ -56,7 +57,7 @@ namespace CoffeePointOfSale.Forms
             {
                 int neededPoints = (int)FormMain.currentOrder.Total * 10;
                 FormMain.currentCustomer.RewardPoints -= neededPoints;
-                display += "Points Spent: " + neededPoints + "\n";
+                display += "\nPoints Spent: " + neededPoints + "\n";
                 display += "Points Reamaining: " + FormMain.currentCustomer.RewardPoints + "\n";
                 FormMain.currentCustomer.AddOrderToHistory(FormMain.currentOrder);
             }

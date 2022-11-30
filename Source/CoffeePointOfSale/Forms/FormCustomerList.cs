@@ -55,6 +55,7 @@ namespace CoffeePointOfSale.Forms
             {
                 var customer = customerList[customerIdx];
                 listBox1.Items.Add($"{customerIdx + 1}. {customer}{Environment.NewLine}");
+                listBox1.Padding = new Padding(20, 0, 0, 20); 
 
                 CreateButton(customer, top, left );
                 top += 33;
@@ -101,10 +102,6 @@ namespace CoffeePointOfSale.Forms
                 }
             }
 
-
-            // JOEL
-            // Write whatever customer was just clicked on to the Customer Service here...something like this:
-            // _customerService.SetCurrentCustomer(this.customer)
 
             Close();
             FormFactory.Get<FormOrderDrink>().Show();

@@ -39,6 +39,7 @@
             this.error = new System.Windows.Forms.Label();
             this.label_addCustomer = new System.Windows.Forms.Label();
             this.cust_data_error = new System.Windows.Forms.Label();
+            this.invalidDataError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // firstLabel
@@ -51,7 +52,6 @@
             this.firstLabel.Size = new System.Drawing.Size(247, 49);
             this.firstLabel.TabIndex = 1;
             this.firstLabel.Text = "First Name: ";
-            this.firstLabel.Click += new System.EventHandler(this.firstLabel_Click);
             // 
             // textBox1
             // 
@@ -125,9 +125,9 @@
             this.addCust_Cancel.BackColor = System.Drawing.Color.Brown;
             this.addCust_Cancel.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.addCust_Cancel.ForeColor = System.Drawing.Color.Transparent;
-            this.addCust_Cancel.Location = new System.Drawing.Point(1147, 570);
+            this.addCust_Cancel.Location = new System.Drawing.Point(1144, 549);
             this.addCust_Cancel.Name = "addCust_Cancel";
-            this.addCust_Cancel.Size = new System.Drawing.Size(143, 52);
+            this.addCust_Cancel.Size = new System.Drawing.Size(143, 64);
             this.addCust_Cancel.TabIndex = 8;
             this.addCust_Cancel.Text = "Cancel";
             this.addCust_Cancel.UseVisualStyleBackColor = false;
@@ -138,12 +138,11 @@
             this.error.AutoSize = true;
             this.error.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.error.ForeColor = System.Drawing.Color.Red;
-            this.error.Location = new System.Drawing.Point(639, 486);
+            this.error.Location = new System.Drawing.Point(636, 465);
             this.error.Name = "error";
             this.error.Size = new System.Drawing.Size(181, 21);
             this.error.TabIndex = 9;
             this.error.Text = "All fields must be filled!";
-            this.error.Click += new System.EventHandler(this.error_Click);
             // 
             // label_addCustomer
             // 
@@ -156,25 +155,36 @@
             this.label_addCustomer.TabIndex = 10;
             this.label_addCustomer.Text = "Add Customer";
             this.label_addCustomer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label_addCustomer.Click += new System.EventHandler(this.label3_Click);
             // 
             // cust_data_error
             // 
-            this.cust_data_error.AutoSize = true;
             this.cust_data_error.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cust_data_error.ForeColor = System.Drawing.Color.Red;
-            this.cust_data_error.Location = new System.Drawing.Point(580, 486);
+            this.cust_data_error.Location = new System.Drawing.Point(528, 465);
             this.cust_data_error.Name = "cust_data_error";
-            this.cust_data_error.Size = new System.Drawing.Size(291, 21);
+            this.cust_data_error.Size = new System.Drawing.Size(397, 36);
             this.cust_data_error.TabIndex = 10;
             this.cust_data_error.Text = "This customer is already in the database!";
+            this.cust_data_error.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // invalidDataError
+            // 
+            this.invalidDataError.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.invalidDataError.ForeColor = System.Drawing.Color.Red;
+            this.invalidDataError.Location = new System.Drawing.Point(571, 454);
+            this.invalidDataError.Name = "invalidDataError";
+            this.invalidDataError.Size = new System.Drawing.Size(313, 32);
+            this.invalidDataError.TabIndex = 11;
+            this.invalidDataError.Text = "Invalid Data!";
+            this.invalidDataError.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FormAddCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(223)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.ClientSize = new System.Drawing.Size(1332, 682);
+            this.Controls.Add(this.invalidDataError);
             this.Controls.Add(this.label_addCustomer);
             this.Controls.Add(this.cust_data_error);
             this.Controls.Add(this.error);
@@ -186,8 +196,8 @@
             this.Controls.Add(this.lastName);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.firstLabel);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);                               
-            this.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.Name = "FormAddCustomer";
             this.Text = "FormAddCustomer";
             this.Load += new System.EventHandler(this.FormAddCustomer_Load);
@@ -208,5 +218,6 @@
         private Label error;
         private Label label_addCustomer;
         private Label cust_data_error;
+        private Label invalidDataError;
     }
 }

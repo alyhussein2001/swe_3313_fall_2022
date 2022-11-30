@@ -34,11 +34,13 @@ namespace CoffeePointOfSale.Services.Payment {
             }
             else 
             {
-                return cardNumber;
+                return "";
             }
             
         }
         public bool ValidateCardNumber(string cardNumber) {
+            if (cardNumber == "" || !cardNumber.All(Char.IsDigit))
+            return false; 
             CreditCardDetector detector = new CreditCardDetector(cardNumber);
             // test: 4012888888881881 
             return detector.IsValid();

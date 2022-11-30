@@ -40,7 +40,7 @@ namespace CoffeePointOfSale.Forms
             this.bMM_CustList.ForeColor = System.Drawing.Color.Transparent;
             this.bMM_CustList.Location = new System.Drawing.Point(57, 525);
             this.bMM_CustList.Name = "bMM_CustList";
-            this.bMM_CustList.Size = new System.Drawing.Size(191, 81);
+            this.bMM_CustList.Size = new System.Drawing.Size(198, 90);
             this.bMM_CustList.TabIndex = 0;
             this.bMM_CustList.Text = "Main Menu";
             this.bMM_CustList.UseVisualStyleBackColor = false;
@@ -53,7 +53,7 @@ namespace CoffeePointOfSale.Forms
             this.addCust.ForeColor = System.Drawing.Color.Transparent;
             this.addCust.Location = new System.Drawing.Point(1071, 525);
             this.addCust.Name = "addCust";
-            this.addCust.Size = new System.Drawing.Size(204, 81);
+            this.addCust.Size = new System.Drawing.Size(216, 90);
             this.addCust.TabIndex = 1;
             this.addCust.Text = "Add Customer";
             this.addCust.UseVisualStyleBackColor = false;
@@ -61,16 +61,16 @@ namespace CoffeePointOfSale.Forms
             // 
             // listBox1
             // 
-
             this.listBox1.BackColor = System.Drawing.SystemColors.MenuBar;
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBox1.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 33;
-            this.listBox1.Location = new System.Drawing.Point(73, 28);
+            this.listBox1.Location = new System.Drawing.Point(12, 11);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1216, 396);
+            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listBox1.Size = new System.Drawing.Size(1300, 495);
             this.listBox1.TabIndex = 2;
             this.listBox1.UseTabStops = false;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);

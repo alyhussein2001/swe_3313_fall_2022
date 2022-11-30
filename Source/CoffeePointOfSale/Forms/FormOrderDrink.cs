@@ -63,6 +63,10 @@ namespace CoffeePointOfSale.Forms
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {
             listBox2.Items.Clear();
+            if (listBox1.SelectedItem == null)
+            {
+                return;
+            }
             string selected = listBox1.SelectedItem.ToString();
             List<Drink> drinkMenu = FormMain.drinkMenu;
             foreach (Drink drink in drinkMenu) {

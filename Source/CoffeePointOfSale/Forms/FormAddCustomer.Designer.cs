@@ -143,8 +143,8 @@
             this.error.Size = new System.Drawing.Size(181, 21);
             this.error.TabIndex = 9;
             this.error.Text = "All fields must be filled!";
+            this.error.Click += new System.EventHandler(this.error_Click);
             // 
-
             // label_addCustomer
             // 
             this.label_addCustomer.AutoSize = true;
@@ -157,27 +157,25 @@
             this.label_addCustomer.Text = "Add Customer";
             this.label_addCustomer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label_addCustomer.Click += new System.EventHandler(this.label3_Click);
+            // 
             // cust_data_error
             // 
-            this.cust_data_error.AutoSize = true;
             this.cust_data_error.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cust_data_error.ForeColor = System.Drawing.Color.Red;
-            this.cust_data_error.Location = new System.Drawing.Point(549, 534);
+            this.cust_data_error.Location = new System.Drawing.Point(580, 486);
             this.cust_data_error.Name = "cust_data_error";
-            this.cust_data_error.Size = new System.Drawing.Size(363, 28);
+            this.cust_data_error.Size = new System.Drawing.Size(291, 21);
             this.cust_data_error.TabIndex = 10;
             this.cust_data_error.Text = "This customer is already in the database!";
-            
-
+            this.cust_data_error.Click += new System.EventHandler(this.cust_data_error_Click);
             // 
             // FormAddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(223)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(1332, 682);
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.label_addCustomer);
-            this.ClientSize = new System.Drawing.Size(1330, 674);
             this.Controls.Add(this.cust_data_error);
             this.Controls.Add(this.error);
             this.Controls.Add(this.addCust_Cancel);

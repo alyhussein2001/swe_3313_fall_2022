@@ -33,16 +33,18 @@ namespace CoffeePointOfSale.Forms
         
         private void FormOrderDrink_Load(object sender, EventArgs e)
         {
-            
+            richTextBox1.Text = "";
+            richTextBox1.Padding = new Padding(15, 15, 15, 15);
             FormMain.currentOrder = new Order();
-            FormMain.currentOrder.Customer = FormMain.currentCustomer;
 
-            custName.Text = FormMain.currentCustomer.FirstName + " " + FormMain.currentCustomer.LastName;
+            custName.Text = FormMain.currentCustomer.LastName + ", " + FormMain.currentCustomer.FirstName;
 
             List<Drink> drinkMenu = FormMain.drinkMenu;
             for (int drinkIdx = 0; drinkIdx < drinkMenu.Count; drinkIdx++) {
                 Drink drink = drinkMenu[drinkIdx];
                 listBox1.Items.Add(drink.Name);
+                listBox1.Padding = new Padding(15, 15, 15, 15);
+
             }
         }
 
@@ -66,6 +68,8 @@ namespace CoffeePointOfSale.Forms
                 if (drink.Name == selected) {
                     foreach (Customization customization in drink.Customizations) {
                         listBox2.Items.Add(customization.Name);
+                        listBox2.Padding = new Padding(15, 15, 15, 15);
+
                     }
                 }
             }
@@ -73,14 +77,8 @@ namespace CoffeePointOfSale.Forms
 
         private void addDrink_Click(object sender, EventArgs e) {
             CurrentDrink newDrink = new CurrentDrink();
-            Drink drinkItem = new Drink();
-
-            foreach (Drink drink in FormMain.drinkMenu) { 
-                if (drink.Name == listBox1.SelectedItem.ToString()) {
-                    drinkItem = drink;
-                }
-            }
-
+            Drink drinkItem = GetDrinkFromMenu(listBox1.SelectedItem.ToString());
+            Debug.WriteLine(drinkItem.Name);
             newDrink.Name = drinkItem.Name;
 
             string customs = "";
@@ -106,12 +104,97 @@ namespace CoffeePointOfSale.Forms
             }
             newDrink.Total = total;
 
+            Debug.WriteLine(newDrink.Name + "   " + newDrink.Customizations + "   " + newDrink.Total);
+
             FormMain.currentOrder.AddDrink(newDrink);
             DisplayOrder();
+            SetAndDisplayTotals();
+        }
+
+        private Drink GetDrinkFromMenu(string drinkName) {
+            foreach (Drink drink in FormMain.drinkMenu) {
+                if (drink.Name == drinkName) {
+                    return drink;
+                }
+            }
+
+            return null;
         }
 
         private void DisplayOrder() {
-            
+            richTextBox1.Text = "";
+            Drink drinkItem = new Drink();
+            foreach (CurrentDrink currentDrink in FormMain.currentOrder.Drinks){
+                List<Customization> customs = new List<Customization>();
+                Debug.WriteLine(currentDrink.Name);
+                drinkItem = GetDrinkFromMenu(currentDrink.Name);
+                foreach (Customization custom in drinkItem.Customizations) {
+                    if (currentDrink.Customizations.Contains(custom.Name)) {
+                        customs.Add(custom);
+                    }
+                }
+
+                richTextBox1.Text += "$" + GetDrinkFromMenu(currentDrink.Name).BasePrice + "     " + currentDrink.Name + "\n";
+
+                foreach (Customization custom in customs) {
+                    if(custom.Price >= 0)
+                    {
+                        richTextBox1.Text += "     $" + custom.Price + "     " + custom.Name + "\n";
+                    }
+                    else
+                    {
+                        richTextBox1.Text += "    -$" + custom.Price.ToString().Remove(0,1) + "     " + custom.Name + "\n";
+                    }
+                    
+                }
+            }
+        }
+
+        private void SetAndDisplayTotals()
+        {
+            OrderHandler orderHandler = new OrderHandler();
+            decimal subtotal = orderHandler.CalculateSubtotal(FormMain.currentOrder);
+            label1.Text = "";
+            label1.Text = "Subtotal: $" + subtotal;
+
+            FormMain.currentOrder.Subtotal = subtotal;
+
+            decimal tax = orderHandler.CalculateTax(FormMain.currentOrder);
+            label2.Text = "";
+            label2.Text = "Tax: $" + tax.ToString("0.00");
+
+            FormMain.currentOrder.Tax = tax;
+
+            decimal total = orderHandler.CalculateTotal(FormMain.currentOrder);
+            label3.Text = "";
+            label3.Text = "Total: $" + total.ToString("0.00");
+
+            FormMain.currentOrder.Total = total;
+        }
+
+        private void horizontalLine_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void custName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

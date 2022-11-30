@@ -10,9 +10,6 @@ namespace CoffeePointOfSale.Services.Customer;
 public class CustomerService : ICustomerService
 {
     private readonly IStorageService _storageService;
-
-    // JOEL 
-    // Add in current customer var to track current customer that was clicked on here
     
     public CustomerService(IStorageService storageService)
     {

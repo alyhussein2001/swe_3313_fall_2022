@@ -48,7 +48,7 @@ namespace CoffeePointOfSale.Forms
 
         private void DemonstrateGettingCustomerList()
         {
-            int top = 5;
+            int top = 3;
             int left = 900;
             var customerList = _customerService.Customers.List;
             for (var customerIdx = 0; customerIdx < customerList.Count; customerIdx++)
@@ -58,7 +58,7 @@ namespace CoffeePointOfSale.Forms
                 listBox1.Padding = new Padding(20, 0, 0, 20); 
 
                 CreateButton(customer, top, left );
-                top += 45;
+                top += 33;
 
             }
         }
@@ -66,7 +66,7 @@ namespace CoffeePointOfSale.Forms
         {
 
             Button button = new Button();
-            button.Size = new Size(120, 50);
+            button.Size = new Size(120, 27);
             button.Font = new Font("Century Gothic", 9);
             string hexColor = "#47525E";
             Color buttonColor = System.Drawing.ColorTranslator.FromHtml(hexColor); 

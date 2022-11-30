@@ -67,9 +67,9 @@ namespace CoffeePointOfSale.Forms
                     FormFactory.Get<FormOrderDrink>().Show();
                 }
                 else cust_data_error.Show();
-                    
+
             }
-            
+
         }
 
         private void firstLabel_Click(object sender, EventArgs e)
@@ -81,6 +81,15 @@ namespace CoffeePointOfSale.Forms
 
         }
 
+        private void error_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cust_data_error_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void phoneNumber_TextChanged(object sender, EventArgs e)
         {
@@ -90,8 +99,8 @@ namespace CoffeePointOfSale.Forms
         private void addCust_Cancel_Click(object sender, EventArgs e)
         {
             Hide();
-            FormFactory.Get<FormMain>().Show(); 
+            FormFactory.Get<FormMain>().Show();
         }
-        
+
     }
 }

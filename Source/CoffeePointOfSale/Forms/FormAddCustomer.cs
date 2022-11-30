@@ -29,6 +29,7 @@ namespace CoffeePointOfSale.Forms
         {
             error.Hide();
             cust_data_error.Hide();
+            invalidDataError.Hide();
         }
 
         private void FirstName(object sender, EventArgs e)

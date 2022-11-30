@@ -44,12 +44,16 @@ namespace CoffeePointOfSale.Forms
 
         private void addNew_Click(object sender, EventArgs e)
         {
-            if (firstName is null || lN is null || phoneNum is null)
+            if (firstName is null || lN is null || phoneNum is null || firstName == "" || lN == "" || phoneNum == "")
             {
+                invalidDataError.Hide();
+                cust_data_error.Hide();
                 error.Show();
             }
             else if(!FirstNameIsValid() || !LastNameIsValid() || !PhoneIsValid())
             {
+                error.Hide();
+                cust_data_error.Hide();
                 invalidDataError.Show();
             }
             else
@@ -68,12 +72,17 @@ namespace CoffeePointOfSale.Forms
                 if (_customerService.Customers[newCust.Phone] == null)
                 {
                     _customerService.Customers.Add(newCust);
-                    FormMain.currentCustomer= newCust;
+                    FormMain.currentCustomer = newCust;
                     _customerService.Write();
                     Close();
                     FormFactory.Get<FormOrderDrink>().Show();
                 }
-                else cust_data_error.Show();
+                else
+                {
+                    invalidDataError.Hide();
+                    error.Hide();
+                    cust_data_error.Show();
+                }
 
             }
 

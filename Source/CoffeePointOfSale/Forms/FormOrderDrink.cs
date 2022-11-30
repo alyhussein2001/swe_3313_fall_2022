@@ -78,6 +78,10 @@ namespace CoffeePointOfSale.Forms
 
         private void addDrink_Click(object sender, EventArgs e) {
             CurrentDrink newDrink = new CurrentDrink();
+            if(listBox1.SelectedItem == null)
+            {
+                return;
+            }
             Drink drinkItem = GetDrinkFromMenu(listBox1.SelectedItem.ToString());
             Debug.WriteLine(drinkItem.Name);
             newDrink.Name = drinkItem.Name;

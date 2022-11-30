@@ -36,14 +36,6 @@ namespace CoffeePointOfSale.Services.Payment {
             this.formPayment = paymentScreenForm;
         }
 
-        private void DisplayCustomerName() {
-            //display customer name on form element
-        }
-
-        private void DisplayTotal() {
-            //display Total on form element
-        }
-
         public string GetCardNumber(string cardNumber) {
 
             if (ValidateCardNumber(cardNumber)) {
@@ -58,7 +50,7 @@ namespace CoffeePointOfSale.Services.Payment {
         }
         private bool ValidateCardNumber(string cardNumber) {
             CreditCardDetector detector = new CreditCardDetector(cardNumber);
-          //  Debug.Write(cardNumber + "hello there :) :) :) :) :) ");
+            // test: 4012888888881881 
             return detector.IsValid();
     
         }
@@ -66,22 +58,22 @@ namespace CoffeePointOfSale.Services.Payment {
         public int GetRewardPoints() {
             if (CheckRewardPoints())
             {
-                return GetTotalRewardPoints(); 
+                return GetTotalRewardPoints();
             }
-            else
-                throw new ArgumentException("Insufficient Points"); 
+            return -1; 
+                
 
         }
-                private bool CheckRewardPoints() 
+                public bool CheckRewardPoints() 
         {
-          //  Debug.Assert(currentOrder.Total >= 0);   
-            int neededPoints = (int)currentOrder.Total * 10;
+            //  Debug.Assert(currentOrder.Total >= 0);
+            int neededPoints = (int)FormMain.currentOrder.Total * 10;
             return neededPoints <= GetTotalRewardPoints();
 
         } 
         private int GetTotalRewardPoints()
         {
-            return (int) currentOrder.Customer.RewardPoints; 
+            return (int) FormMain.currentOrder.Customer.RewardPoints; 
         }
        
  

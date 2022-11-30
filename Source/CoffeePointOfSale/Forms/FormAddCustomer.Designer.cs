@@ -160,7 +160,6 @@
             // 
             // cust_data_error
             // 
-            this.cust_data_error.AutoSize = true;
             this.cust_data_error.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cust_data_error.ForeColor = System.Drawing.Color.Red;
             this.cust_data_error.Location = new System.Drawing.Point(580, 486);
@@ -175,7 +174,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(223)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(1330, 674);
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.label_addCustomer);
             this.Controls.Add(this.cust_data_error);
             this.Controls.Add(this.error);

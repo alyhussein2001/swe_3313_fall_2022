@@ -76,6 +76,7 @@ namespace CoffeePointOfSale.Forms
             if (!paymentHandler.ValidateCardNumber(CCnumber.Text))
                 invalidCard.Show();
             paymentHandler.GoToReceipt(true, CCnumber.Text);
+
             invalidCard.Hide(); 
 
             paymentHandler.GetCardNumber(CCnumber.Text);

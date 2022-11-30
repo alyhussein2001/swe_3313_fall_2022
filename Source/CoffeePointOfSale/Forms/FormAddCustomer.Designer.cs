@@ -179,10 +179,10 @@
             // 
             // FormAddCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(223)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.ClientSize = new System.Drawing.Size(1332, 682);
             this.Controls.Add(this.invalidDataError);
             this.Controls.Add(this.label_addCustomer);
             this.Controls.Add(this.cust_data_error);
@@ -195,8 +195,8 @@
             this.Controls.Add(this.lastName);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.firstLabel);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.Name = "FormAddCustomer";
             this.Text = "FormAddCustomer";
             this.Load += new System.EventHandler(this.FormAddCustomer_Load);

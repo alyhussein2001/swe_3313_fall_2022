@@ -36,9 +36,27 @@ namespace CoffeePointOfSale.Forms
         private void DisplayReceipt()
         {
             richTextBox1.Text = "";
-            string display = "123 Kennesaw Road, Kennesaw, GA 30144\nCustomer Info:\n" + FormMain.currentCustomer.FirstName + " " + FormMain.currentCustomer.LastName + "\nOrder:\n";
+            string display = "123 Kennesaw Road, Kennesaw, GA 30144\nCustomer Info:\n" + FormMain.currentCustomer.FirstName + " " + FormMain.currentCustomer.LastName + "\n";
 
-            //add points/card
+            if(FormMain.currentOrder.PaymentMethod.Contains("card"))
+            {
+                display += "Card Number: **** **** **** " + FormMain.currentOrder.PaymentMethod.Remove(0, 16) + "\n";
+                if (!FormMain.currentCustomer.IsAnonymous)
+                {
+                    display += "Points Earned: " + (int)FormMain.currentOrder.Total * 10 + "\n";
+                    FormMain.currentCustomer.RewardPoints += (int)FormMain.currentOrder.Total * 10;
+                    FormMain.currentCustomer.AddOrderToHistory(FormMain.currentOrder);
+                }
+            }
+            else if(FormMain.currentOrder.PaymentMethod == "points")
+            {
+                int neededPoints = (int)FormMain.currentOrder.Total * 10;
+                FormMain.currentCustomer.RewardPoints -= neededPoints;
+                display += "Points Spent: " + neededPoints + "\n";
+                display += "Points Reamaining: " + FormMain.currentCustomer.RewardPoints + "\n";
+            }
+
+            display += "Order:\n";
 
             Drink drinkItem = new Drink();
             foreach (CurrentDrink currentDrink in FormMain.currentOrder.Drinks)

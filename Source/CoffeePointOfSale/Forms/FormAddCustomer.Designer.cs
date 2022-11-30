@@ -167,6 +167,7 @@
             this.cust_data_error.Size = new System.Drawing.Size(291, 21);
             this.cust_data_error.TabIndex = 10;
             this.cust_data_error.Text = "This customer is already in the database!";
+            this.cust_data_error.Click += new System.EventHandler(this.cust_data_error_Click);
             // 
             // FormAddCustomer
             // 

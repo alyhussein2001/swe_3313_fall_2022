@@ -86,6 +86,11 @@ namespace CoffeePointOfSale.Forms
 
         }
 
+        private void cust_data_error_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void phoneNumber_TextChanged(object sender, EventArgs e)
         {
             phoneNum = phoneNumber.Text;

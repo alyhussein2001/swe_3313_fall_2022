@@ -35,7 +35,6 @@ namespace CoffeePointOfSale.Forms
         {
             richTextBox1.Text = "";
             FormMain.currentOrder = new Order();
-            FormMain.currentOrder.Customer = FormMain.currentCustomer;
 
             custName.Text = FormMain.currentCustomer.FirstName + " " + FormMain.currentCustomer.LastName;
 

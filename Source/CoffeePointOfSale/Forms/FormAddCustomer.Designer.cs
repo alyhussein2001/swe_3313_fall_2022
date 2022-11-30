@@ -138,7 +138,7 @@
             this.error.AutoSize = true;
             this.error.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.error.ForeColor = System.Drawing.Color.Red;
-            this.error.Location = new System.Drawing.Point(639, 486);
+            this.error.Location = new System.Drawing.Point(636, 465);
             this.error.Name = "error";
             this.error.Size = new System.Drawing.Size(181, 21);
             this.error.TabIndex = 9;
@@ -160,19 +160,20 @@
             // 
             this.cust_data_error.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cust_data_error.ForeColor = System.Drawing.Color.Red;
-            this.cust_data_error.Location = new System.Drawing.Point(580, 486);
+            this.cust_data_error.Location = new System.Drawing.Point(528, 465);
             this.cust_data_error.Name = "cust_data_error";
-            this.cust_data_error.Size = new System.Drawing.Size(291, 21);
+            this.cust_data_error.Size = new System.Drawing.Size(397, 36);
             this.cust_data_error.TabIndex = 10;
             this.cust_data_error.Text = "This customer is already in the database!";
+            this.cust_data_error.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // invalidDataError
             // 
             this.invalidDataError.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.invalidDataError.ForeColor = System.Drawing.Color.Red;
-            this.invalidDataError.Location = new System.Drawing.Point(580, 486);
+            this.invalidDataError.Location = new System.Drawing.Point(571, 454);
             this.invalidDataError.Name = "invalidDataError";
-            this.invalidDataError.Size = new System.Drawing.Size(291, 21);
+            this.invalidDataError.Size = new System.Drawing.Size(313, 32);
             this.invalidDataError.TabIndex = 11;
             this.invalidDataError.Text = "Invalid Data!";
             this.invalidDataError.TextAlign = System.Drawing.ContentAlignment.TopCenter;

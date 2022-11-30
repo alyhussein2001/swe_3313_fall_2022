@@ -125,9 +125,9 @@
             this.addCust_Cancel.BackColor = System.Drawing.Color.Brown;
             this.addCust_Cancel.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.addCust_Cancel.ForeColor = System.Drawing.Color.Transparent;
-            this.addCust_Cancel.Location = new System.Drawing.Point(1147, 570);
+            this.addCust_Cancel.Location = new System.Drawing.Point(1144, 549);
             this.addCust_Cancel.Name = "addCust_Cancel";
-            this.addCust_Cancel.Size = new System.Drawing.Size(143, 52);
+            this.addCust_Cancel.Size = new System.Drawing.Size(143, 64);
             this.addCust_Cancel.TabIndex = 8;
             this.addCust_Cancel.Text = "Cancel";
             this.addCust_Cancel.UseVisualStyleBackColor = false;

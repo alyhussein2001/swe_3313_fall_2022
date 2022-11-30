@@ -36,9 +36,15 @@ namespace CoffeePointOfSale.Forms
 
         private void FormPayment_Load(object sender, EventArgs e)
         {
-            if (FormMain.currentCustomer.Phone == "anonymous" || !paymentHandler.CheckRewardPoints())
+            if (FormMain.currentCustomer.Phone == "anonymous")//||) !paymentHandler.CheckRewardPoints())
             {
                 payPoints.Enabled = false;
+                label5.Text = "N/A";
+            }
+            else if (FormMain.currentCustomer.Phone != "anonymous" && !paymentHandler.CheckRewardPoints())
+            {
+                payPoints.Enabled = false;
+                label5.Text = $"{FormMain.currentCustomer.RewardPoints}";
             }
             else label5.Text = $"{FormMain.currentCustomer.RewardPoints}";
             label4.Text = FormMain.currentCustomer.FirstName + " " + FormMain.currentCustomer.LastName;

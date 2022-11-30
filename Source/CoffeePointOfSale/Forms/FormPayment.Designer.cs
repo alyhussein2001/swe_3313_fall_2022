@@ -38,6 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.invalidCard = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // payCard
@@ -83,7 +84,7 @@
             // 
             this.CCnumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CCnumber.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CCnumber.Location = new System.Drawing.Point(126, 318);
+            this.CCnumber.Location = new System.Drawing.Point(126, 306);
             this.CCnumber.Name = "CCnumber";
             this.CCnumber.Size = new System.Drawing.Size(338, 50);
             this.CCnumber.TabIndex = 3;
@@ -162,12 +163,25 @@
             this.label6.TabIndex = 9;
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // invalidCard
+            // 
+            this.invalidCard.AutoSize = true;
+            this.invalidCard.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.invalidCard.ForeColor = System.Drawing.Color.Brown;
+            this.invalidCard.Location = new System.Drawing.Point(216, 375);
+            this.invalidCard.Name = "invalidCard";
+            this.invalidCard.Size = new System.Drawing.Size(153, 19);
+            this.invalidCard.TabIndex = 10;
+            this.invalidCard.Text = "Invalid Card Number";
+            this.invalidCard.Click += new System.EventHandler(this.invalidCard_Click);
+            // 
             // FormPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(223)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1332, 682);
+            this.Controls.Add(this.invalidCard);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -199,5 +213,6 @@
         private Label label4;
         private Label label5;
         private Label label6;
+        private Label invalidCard;
     }
 } 

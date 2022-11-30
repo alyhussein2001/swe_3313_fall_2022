@@ -163,7 +163,7 @@
             this.cust_data_error.AutoSize = true;
             this.cust_data_error.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cust_data_error.ForeColor = System.Drawing.Color.Red;
-            this.cust_data_error.Location = new System.Drawing.Point(562, 534);
+            this.cust_data_error.Location = new System.Drawing.Point(580, 486);
             this.cust_data_error.Name = "cust_data_error";
             this.cust_data_error.Size = new System.Drawing.Size(291, 21);
             this.cust_data_error.TabIndex = 10;

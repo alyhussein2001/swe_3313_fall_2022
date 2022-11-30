@@ -21,12 +21,16 @@ namespace CoffeePointOfSale.Forms
         private IAppSettings _appSettings;
         private readonly ICustomerService _customerService;
         private PaymentHandler paymentHandler = new PaymentHandler(); 
+
+
         public FormPayment(IAppSettings appSettings, ICustomerService customerService)
         {
             InitializeComponent();
             _appSettings = appSettings;
             _customerService = customerService;
         }
+
+            
 
         private void FormPayment_Load(object sender, EventArgs e)
         {
@@ -36,7 +40,8 @@ namespace CoffeePointOfSale.Forms
             }
             else label5.Text = $"{FormMain.currentCustomer.RewardPoints}";
             label4.Text = FormMain.currentCustomer.FirstName + " " + FormMain.currentCustomer.LastName;
-            label6.Text = "$" + FormMain.currentOrder.Total.ToString("0.00"); 
+            label6.Text = "$" + FormMain.currentOrder.Total.ToString("0.00");
+            invalidCard.Hide();
 
 
             // Debug.WriteLine("hello");
@@ -48,6 +53,7 @@ namespace CoffeePointOfSale.Forms
             Hide();
             FormFactory.Get<FormMain>().Show();
         }
+     
 
         private void payPoints_Click(object sender, EventArgs e)
         {
@@ -58,8 +64,12 @@ namespace CoffeePointOfSale.Forms
         private void payCard_Click(object sender, EventArgs e)
         {
             //  Debug.Write(CCnumber.Text); 
-         paymentHandler.GetCardNumber(CCnumber.Text);
-         paymentHandler.GoToReceipt(true); 
+   
+            paymentHandler.GetCardNumber(CCnumber.Text);
+            if (!paymentHandler.ValidateCardNumber(CCnumber.Text))
+                invalidCard.Show();
+            paymentHandler.GoToReceipt(true);
+            invalidCard.Hide(); 
         }
 
         private void CCnumber_TextInput (object sender, EventArgs e)
@@ -78,6 +88,11 @@ namespace CoffeePointOfSale.Forms
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void invalidCard_Click(object sender, EventArgs e)
         {
 
         }

@@ -55,6 +55,7 @@ namespace CoffeePointOfSale.Forms
             {
                 var customer = customerList[customerIdx];
                 listBox1.Items.Add($"{customerIdx + 1}. {customer}{Environment.NewLine}");
+                listBox1.Padding = new Padding(20, 0, 0, 20); 
 
                 CreateButton(customer, top, left );
                 top += 33;

@@ -46,7 +46,7 @@ namespace CoffeePointOfSale.Services.Payment {
             return detector.IsValid();
     
         }
-        
+
         public int GetRewardPoints() {
             if (CheckRewardPoints())
             {

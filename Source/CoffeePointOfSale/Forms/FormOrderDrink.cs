@@ -33,6 +33,7 @@ namespace CoffeePointOfSale.Forms
         
         private void FormOrderDrink_Load(object sender, EventArgs e)
         {
+            SetTitle("Order Drink");
             callPayment.Enabled = false;
             richTextBox1.Text = "";
             richTextBox1.Padding = new Padding(15, 15, 15, 15);

@@ -36,7 +36,7 @@ namespace CoffeePointOfSale.Forms
 
         private void FormPayment_Load(object sender, EventArgs e)
         {
-
+            SetTitle("Payment");
             if (FormMain.currentCustomer.Phone == "anonymous")
             {
                 payPoints.Enabled = false;

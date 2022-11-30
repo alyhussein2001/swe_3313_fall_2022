@@ -36,12 +36,15 @@ namespace CoffeePointOfSale.Forms
 
         private void DisplayReceipt()
         {
+            FormMain.currentOrder.TransactionDate = DateTime.Now;
+
             richTextBox1.Text = "";
             string display = "123 Kennesaw Road, Kennesaw, GA 30144\nCustomer Info:\n" + FormMain.currentCustomer.FirstName + " " + FormMain.currentCustomer.LastName + "\n";
 
             if(FormMain.currentOrder.PaymentMethod.Contains("card"))
             {
                 display += "Card Number: **** **** **** " + FormMain.currentOrder.PaymentMethod.Remove(0, 16) + "\n";
+                FormMain.currentOrder.PaymentMethod = FormMain.currentOrder.PaymentMethod.Remove(4, 16);
                 if (!FormMain.currentCustomer.IsAnonymous)
                 {
                     display += "Points Earned: " + (int)FormMain.currentOrder.Total * 10 + "\n";

@@ -2,6 +2,7 @@
 using CoffeePointOfSale.Forms.Base;
 using CoffeePointOfSale.Services.Customer;
 using CoffeePointOfSale.Services.FormFactory;
+using CoffeePointOfSale.Services.Order;
 using CoffeePointOfSale.Services.Payment;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Schema;
 
 namespace CoffeePointOfSale.Forms
 {
@@ -30,14 +32,13 @@ namespace CoffeePointOfSale.Forms
 
         private void FormPayment_Load(object sender, EventArgs e)
         {
-            if (FormMain.currentCustomer.Phone == "anonymous")
+            if (FormMain.currentCustomer.Phone == "anonymous" || !paymentHandler.CheckRewardPoints())
             {
                 payPoints.Enabled = false;
             }
             else label5.Text = $"{FormMain.currentCustomer.RewardPoints}";
-            
-           // Debug.WriteLine("hello");
-           // Debug.WriteLine(_customerService.Customers["404-444-5555"].ToString());
+            label4.Text = FormMain.currentCustomer.FirstName + " " + FormMain.currentCustomer.LastName;
+            label6.Text = "Total: $" + FormMain.currentOrder.Total.ToString("0.00"); 
         }
 
         private void Cancel_Payment_Click(object sender, EventArgs e)

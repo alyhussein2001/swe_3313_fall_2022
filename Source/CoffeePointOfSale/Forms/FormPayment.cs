@@ -75,12 +75,13 @@ namespace CoffeePointOfSale.Forms
 
         private void payCard_Click(object sender, EventArgs e)
         {
-            //  Debug.Write(CCnumber.Text); 
-
-   
+            //  Debug.Write(CCnumber.Text);
             paymentHandler.GetCardNumber(CCnumber.Text);
             if (!paymentHandler.ValidateCardNumber(CCnumber.Text))
+            {
                 invalidCard.Show();
+                return; 
+            } 
             paymentHandler.GoToReceipt(true, CCnumber.Text);
 
             invalidCard.Hide(); 

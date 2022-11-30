@@ -26,6 +26,7 @@ namespace CoffeePointOfSale.Services.Order {
         public decimal Total { get; set; }
         public string PaymentMethod { get; set; }
         public CoffeePointOfSale.Services.Customer.Customer Customer { get; set; }
+        public List<CurrentDrink.CurrentDrink> Drinks { get { return drinks; } }
 
         public void AddDrink(CurrentDrink.CurrentDrink newDrink) {
             drinks.Add(newDrink);

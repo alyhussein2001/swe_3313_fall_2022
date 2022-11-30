@@ -1,4 +1,5 @@
 ﻿using CoffeePointOfSale.Forms;
+using CoffeePointOfSale.Forms.Base;
 using CreditCardValidator;
 using System;
 using System.Collections.Generic;
@@ -11,10 +12,9 @@ using CoffeePointOfSale.Services.FormFactory;
 
 namespace CoffeePointOfSale.Services.Payment {
     public class PaymentHandler {
+       private Order.Order currentOrder;
+    private FormPayment formPayment;
 
-        public PaymentHandler() {
-
-        }
 
         public void GoToReceipt(bool withCard, string card) {
 
@@ -29,16 +29,16 @@ namespace CoffeePointOfSale.Services.Payment {
         public string GetCardNumber(string cardNumber) {
 
             if (ValidateCardNumber(cardNumber)) {
-                Debug.Write("Valid"); 
+             //   Debug.Write("Valid"); 
                 return cardNumber;
             }
             else 
-            {// print out exception and allow new input ?????
-                throw new ArgumentException("Invalid Card Number");
+            {
+                return cardNumber;
             }
             
         }
-        private bool ValidateCardNumber(string cardNumber) {
+        public bool ValidateCardNumber(string cardNumber) {
             CreditCardDetector detector = new CreditCardDetector(cardNumber);
             // test: 4012888888881881 
             return detector.IsValid();
@@ -51,13 +51,10 @@ namespace CoffeePointOfSale.Services.Payment {
                 return GetTotalRewardPoints();
             }
             return -1; 
-                
-
         }
 
         public bool CheckRewardPoints() 
         {
-            //  Debug.Assert(currentOrder.Total >= 0);
             int neededPoints = (int)FormMain.currentOrder.Total * 10;
             return neededPoints <= GetTotalRewardPoints();
 

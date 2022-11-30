@@ -15,7 +15,7 @@ namespace CoffeePointOfSale.Forms
 {
     public partial class FormAddCustomer : Base.FormNoCloseBase
     {
-        string firtname, lN, phoneNum;
+        string firstName, lN, phoneNum;
         private IAppSettings _appSettings;
         private readonly ICustomerService _customerService;
         public FormAddCustomer(IAppSettings appSettings, ICustomerService customerService)
@@ -34,7 +34,7 @@ namespace CoffeePointOfSale.Forms
 
         private void FirstName(object sender, EventArgs e)
         {
-            firtname = textBox1.Text;
+            firstName = textBox1.Text;
         }
 
         private void lastName_TextChanged(object sender, EventArgs e)
@@ -44,17 +44,22 @@ namespace CoffeePointOfSale.Forms
 
         private void addNew_Click(object sender, EventArgs e)
         {
-            if (firtname is null || lN is null || phoneNum is null)
+            if (firstName is null || lN is null || phoneNum is null)
             {
                 error.Show();
             }
+            else if(!FirstNameIsValid() || !LastNameIsValid() || !PhoneIsValid())
+            {
+                invalidDataError.Show();
+            }
             else
             {
+                invalidDataError.Hide();
                 error.Hide();
                 cust_data_error.Hide();
                 var newCust = new Customer()
                 {
-                    FirstName = firtname,
+                    FirstName = firstName,
                     LastName = lN,
                     Phone = phoneNum,
                     RewardPoints = 0,
@@ -64,6 +69,7 @@ namespace CoffeePointOfSale.Forms
                 {
                     _customerService.Customers.Add(newCust);
                     FormMain.currentCustomer= newCust;
+                    _customerService.Write();
                     Close();
                     FormFactory.Get<FormOrderDrink>().Show();
                 }
@@ -73,23 +79,56 @@ namespace CoffeePointOfSale.Forms
 
         }
 
-        private void firstLabel_Click(object sender, EventArgs e)
+        private bool FirstNameIsValid()
         {
-
-        }
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void error_Click(object sender, EventArgs e)
-        {
-
+            if (!firstName.All(Char.IsLetter))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
-        private void cust_data_error_Click(object sender, EventArgs e)
+        private bool LastNameIsValid()
         {
+            if (!lN.All(Char.IsLetter))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
+        private bool PhoneIsValid()
+        {
+            int count = 1;
+            if(!(phoneNum.Length == 12))
+            {
+                return false;
+            }
+            foreach(char charatcer in phoneNum)
+            {
+                if(count == 4 || count == 8)
+                {
+                    if (charatcer != '-')
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (!char.IsDigit(charatcer))
+                    {
+                        return false;
+                    }
+                }
+                count++;
+            }
+            return true;
         }
 
         private void phoneNumber_TextChanged(object sender, EventArgs e)

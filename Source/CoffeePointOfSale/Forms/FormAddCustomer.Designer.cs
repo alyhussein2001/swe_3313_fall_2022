@@ -52,7 +52,6 @@
             this.firstLabel.Size = new System.Drawing.Size(247, 49);
             this.firstLabel.TabIndex = 1;
             this.firstLabel.Text = "First Name: ";
-            this.firstLabel.Click += new System.EventHandler(this.firstLabel_Click);
             // 
             // textBox1
             // 
@@ -144,7 +143,6 @@
             this.error.Size = new System.Drawing.Size(181, 21);
             this.error.TabIndex = 9;
             this.error.Text = "All fields must be filled!";
-            this.error.Click += new System.EventHandler(this.error_Click);
             // 
             // label_addCustomer
             // 
@@ -157,7 +155,6 @@
             this.label_addCustomer.TabIndex = 10;
             this.label_addCustomer.Text = "Add Customer";
             this.label_addCustomer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label_addCustomer.Click += new System.EventHandler(this.label3_Click);
             // 
             // cust_data_error
             // 
@@ -168,7 +165,6 @@
             this.cust_data_error.Size = new System.Drawing.Size(291, 21);
             this.cust_data_error.TabIndex = 10;
             this.cust_data_error.Text = "This customer is already in the database!";
-            this.cust_data_error.Click += new System.EventHandler(this.cust_data_error_Click);
             // 
             // invalidDataError
             // 

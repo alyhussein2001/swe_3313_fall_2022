@@ -2,6 +2,7 @@
 using CreditCardValidator;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,8 +10,8 @@ using System.Threading.Tasks;
 
 namespace CoffeePointOfSale.Services.Payment {
     public class PaymentHandler {
-        private Order.Order currentOrder;
-        private FormPayment formPayment;
+       private Order.Order currentOrder;
+       private FormPayment formPayment;
 
         public PaymentHandler() {
 
@@ -18,12 +19,11 @@ namespace CoffeePointOfSale.Services.Payment {
 
         public void GoToReceipt(bool withCard) {
             if (withCard) {
-                // GetCardNumber();
-               // CreditCardDetector detector = new CreditCardDetector("4012 8888 8888 1881");
 
             }
             else {
-                //look at reward points
+                
+
             }
             //share data and go to receipt form
         }
@@ -44,41 +44,47 @@ namespace CoffeePointOfSale.Services.Payment {
             //display Total on form element
         }
 
-        public string GetCardNumber(String cardNumber) {
-          
+        public string GetCardNumber(string cardNumber) {
 
             if (ValidateCardNumber(cardNumber)) {
+                Debug.Write("Valid"); 
                 return cardNumber;
             }
             else 
-            {
+            {// print out exception and allow new input ?????
                 throw new ArgumentException("Invalid Card Number");
             }
             
         }
-
         private bool ValidateCardNumber(string cardNumber) {
-            bool valid = false;
-
-            //validate card number using math
-
-            return valid;
+            CreditCardDetector detector = new CreditCardDetector(cardNumber);
+          //  Debug.Write(cardNumber + "hello there :) :) :) :) :) ");
+            return detector.IsValid();
+    
         }
 
-        private int CalculateNeededRewardPoints() {
+        public int GetRewardPoints() {
+            if (CheckRewardPoints())
+            {
+                return GetTotalRewardPoints(); 
+            }
+            else
+                throw new ArgumentException("Insufficient Points"); 
+
+        }
+                private bool CheckRewardPoints() 
+        {
+          //  Debug.Assert(currentOrder.Total >= 0);   
             int neededPoints = (int)currentOrder.Total * 10;
-            return neededPoints;
-        }
+            return neededPoints <= GetTotalRewardPoints();
 
-        private bool CheckRewardPoints() {
-            int neededPoints = CalculateNeededRewardPoints();
-            if (neededPoints <= currentOrder.Customer.RewardPoints) {
-                return true;
-            }
-            else {
-                return false;
-            }
+        } 
+        private int GetTotalRewardPoints()
+        {
+            return (int) currentOrder.Customer.RewardPoints; 
         }
+       
+ 
 
 
 

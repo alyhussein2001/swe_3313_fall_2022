@@ -20,7 +20,7 @@ namespace CoffeePointOfSale.Forms
     {
         private IAppSettings _appSettings;
         private readonly ICustomerService _customerService;
-        private PaymentHandler paymentHandler; 
+        private PaymentHandler paymentHandler = new PaymentHandler(); 
         public FormPayment(IAppSettings appSettings, ICustomerService customerService)
         {
             InitializeComponent();
@@ -48,17 +48,20 @@ namespace CoffeePointOfSale.Forms
 
         private void payPoints_Click(object sender, EventArgs e)
         {
-
+            paymentHandler.GetRewardPoints();
+            paymentHandler.GoToReceipt(false);
         }
 
         private void payCard_Click(object sender, EventArgs e)
         {
-
+            //  Debug.Write(CCnumber.Text); 
+         paymentHandler.GetCardNumber(CCnumber.Text);
+         paymentHandler.GoToReceipt(true); 
         }
 
         private void CCnumber_TextInput (object sender, EventArgs e)
         {
-            paymentHandler.GetCardNumber(CCnumber.Text); 
+           // Debug.Write(CCnumber.Text); 
         }
 
         private void label1_Click(object sender, EventArgs e)

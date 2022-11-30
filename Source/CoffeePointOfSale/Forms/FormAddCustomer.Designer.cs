@@ -158,6 +158,19 @@
             this.label_addCustomer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label_addCustomer.Click += new System.EventHandler(this.label3_Click);
             // 
+
+            // label_addCustomer
+            // 
+            this.label_addCustomer.AutoSize = true;
+            this.label_addCustomer.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_addCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.label_addCustomer.Location = new System.Drawing.Point(544, 43);
+            this.label_addCustomer.Name = "label_addCustomer";
+            this.label_addCustomer.Size = new System.Drawing.Size(301, 47);
+            this.label_addCustomer.TabIndex = 10;
+            this.label_addCustomer.Text = "Add Customer";
+            this.label_addCustomer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label_addCustomer.Click += new System.EventHandler(this.label3_Click);
             // cust_data_error
             // 
             this.cust_data_error.AutoSize = true;

@@ -23,10 +23,12 @@ namespace CoffeePointOfSale.Forms
             InitializeComponent();
             _appSettings = appSettings;
             _customerService = customerService;
+            
         }
 
         private void FormAddCustomer_Load(object sender, EventArgs e)
         {
+            SetTitle("Add Customer");
             error.Hide();
             cust_data_error.Hide();
             invalidDataError.Hide();

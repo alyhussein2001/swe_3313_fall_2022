@@ -30,6 +30,7 @@ namespace CoffeePointOfSale.Forms
 
         private void FormReceipt_Load(object sender, EventArgs e)
         {
+            SetTitle("Receipt");
             DisplayReceipt();
             _customerService.Write();
         }

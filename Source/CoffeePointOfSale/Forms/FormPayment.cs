@@ -36,6 +36,7 @@ namespace CoffeePointOfSale.Forms
 
         private void FormPayment_Load(object sender, EventArgs e)
         {
+            SetTitle("Payment");
 // UNSURE IF THIS CONFLICT IS FIXED CORRECTLY
 /*<<<<<<< HEAD
             if (FormMain.currentCustomer.Phone == "anonymous" || !paymentHandler.CheckRewardPoints())

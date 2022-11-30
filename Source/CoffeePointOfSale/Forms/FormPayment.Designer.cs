@@ -44,7 +44,7 @@
             this.payCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.payCard.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.payCard.ForeColor = System.Drawing.Color.Transparent;
-            this.payCard.Location = new System.Drawing.Point(166, 412);
+            this.payCard.Location = new System.Drawing.Point(177, 412);
             this.payCard.Name = "payCard";
             this.payCard.Size = new System.Drawing.Size(204, 55);
             this.payCard.TabIndex = 0;
@@ -81,10 +81,10 @@
             // CCnumber
             // 
             this.CCnumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CCnumber.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CCnumber.Location = new System.Drawing.Point(113, 316);
+            this.CCnumber.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CCnumber.Location = new System.Drawing.Point(125, 318);
             this.CCnumber.Name = "CCnumber";
-            this.CCnumber.Size = new System.Drawing.Size(338, 50);
+            this.CCnumber.Size = new System.Drawing.Size(338, 25);
             this.CCnumber.TabIndex = 3;
             this.CCnumber.TextChanged += new System.EventHandler(this.CCnumber_TextInput);
             // 
@@ -130,9 +130,8 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.label4.Location = new System.Drawing.Point(595, 150);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 30);
+            this.label4.Size = new System.Drawing.Size(0, 30);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Total:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5

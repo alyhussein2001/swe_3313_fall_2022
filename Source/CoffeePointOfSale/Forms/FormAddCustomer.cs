@@ -62,7 +62,7 @@ namespace CoffeePointOfSale.Forms
                 if (_customerService.Customers[newCust.Phone] == null)
                 {
                     _customerService.Customers.Add(newCust);
-                    FormMain.currentCustomer = newCust;
+                    FormMain.currentCustomer= newCust;
                     Close();
                     FormFactory.Get<FormOrderDrink>().Show();
                 }

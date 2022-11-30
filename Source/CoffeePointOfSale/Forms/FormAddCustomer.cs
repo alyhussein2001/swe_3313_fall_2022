@@ -34,12 +34,12 @@ namespace CoffeePointOfSale.Forms
 
         private void FirstName(object sender, EventArgs e)
         {
-            firstName = textBox1.Text;
+            firstName = textBox1.Text.Trim();
         }
 
         private void lastName_TextChanged(object sender, EventArgs e)
         {
-            lN = lastName.Text;
+            lN = lastName.Text.Trim();
         }
 
         private void addNew_Click(object sender, EventArgs e)
@@ -142,7 +142,7 @@ namespace CoffeePointOfSale.Forms
 
         private void phoneNumber_TextChanged(object sender, EventArgs e)
         {
-            phoneNum = phoneNumber.Text;
+            phoneNum = phoneNumber.Text.Trim();
         }
 
         private void addCust_Cancel_Click(object sender, EventArgs e)

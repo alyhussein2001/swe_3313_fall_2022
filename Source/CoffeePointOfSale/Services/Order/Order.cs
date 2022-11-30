@@ -42,17 +42,13 @@ namespace CoffeePointOfSale.Services.Order
             int count = 1;
             foreach (var drink in drinks)
             {
-                if (count > 1)
+                if(count > 1)
                 {
-                    details += ", " + count + ". Drink: " + drink.Name;
+                    details += " | $" + drink.Total.ToString("0.00") + " " + drink.Name + " " + drink.Customizations;
                 }
                 else
                 {
-                    details += count + ". Drink: " + drink.Name;
-                    if (drink.Customizations != "")
-                    {
-                        details += " Customizations: " + drink.Customizations;
-                    }
+                    details += "$" + drink.Total.ToString("0.00") + " " + drink.Name + " " + drink.Customizations;
                 }
                 count++;
             }

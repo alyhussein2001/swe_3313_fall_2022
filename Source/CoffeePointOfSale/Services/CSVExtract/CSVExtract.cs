@@ -31,12 +31,26 @@ namespace CoffeePointOfSale.Services.CSVExtract
             {
                 foreach (var order in customer.OrderHistory)
                 {
+                    int pointsRedeemed = 0;
+                    if(order.PaymentMethod == "card")
+                    {
+                        order.PaymentMethod = "Credit Card";
+                    }
+                    else
+                    {
+                        order.PaymentMethod = "Rewards";
+                        pointsRedeemed = (int)order.Total * 10;
+                    }
+
                     var csvExtractLine = new CsvExtractLine
                     {
                         CustomerId = customer.Phone,
-                        CustomerName = customer.FirstName + "," + customer.LastName,
-                        OrderDate = order.TransactionDate,
-                        OrderTotalPrice = order.Total,
+                        TransactionDateTime = order.TransactionDate,
+                        SubTotal = order.Subtotal,
+                        Tax = order.Tax,
+                        Total = order.Total,
+                        Payment = order.PaymentMethod,
+                        RewardPointsRedeemed = pointsRedeemed,
                         OrderDetails = order.ToString()
                     };
 
@@ -77,9 +91,12 @@ namespace CoffeePointOfSale.Services.CSVExtract
     public class CsvExtractLine
     {
         public string? CustomerId { get; set; }
-        public string? CustomerName { get; set; }
-        public DateTime OrderDate { get; set; }
-        public decimal OrderTotalPrice { get; set; }
+        public DateTime TransactionDateTime { get; set; }
+        public decimal SubTotal { get; set; }
+        public decimal Tax { get; set; }
+        public decimal Total { get; set; }
+        public string Payment { get; set; }
+        public int RewardPointsRedeemed { get; set; }
         public string? OrderDetails { get; set; }
     }
 }

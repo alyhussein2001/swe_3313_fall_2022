@@ -64,7 +64,7 @@ namespace CoffeePointOfSale.Services.Payment {
         } 
         private int GetTotalRewardPoints()
         {
-            return (int) FormMain.currentOrder.Customer.RewardPoints; 
+            return (int) FormMain.currentCustomer.RewardPoints; 
         }
        
  

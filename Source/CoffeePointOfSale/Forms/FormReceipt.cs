@@ -31,6 +31,7 @@ namespace CoffeePointOfSale.Forms
         private void FormReceipt_Load(object sender, EventArgs e)
         {
             DisplayReceipt();
+            _customerService.Write();
         }
 
         private void DisplayReceipt()

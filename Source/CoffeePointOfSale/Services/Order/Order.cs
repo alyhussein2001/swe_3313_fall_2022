@@ -11,7 +11,6 @@ namespace CoffeePointOfSale.Services.Order {
         private decimal subtotal;
         private decimal total;
         private string paymentMethod;
-        private Customer.Customer customer;
 
         public Order() {
             drinks = new List<CurrentDrink.CurrentDrink>();
@@ -25,7 +24,6 @@ namespace CoffeePointOfSale.Services.Order {
         public decimal Subtotal { get; set; }
         public decimal Total { get; set; }
         public string PaymentMethod { get; set; }
-        public CoffeePointOfSale.Services.Customer.Customer Customer { get; set; }
         public List<CurrentDrink.CurrentDrink> Drinks { get { return drinks; } }
 
         public void AddDrink(CurrentDrink.CurrentDrink newDrink) {

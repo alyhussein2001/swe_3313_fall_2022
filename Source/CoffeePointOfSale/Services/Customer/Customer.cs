@@ -54,10 +54,10 @@ public class Customer
     //start - this is code that i (Mason) added but have a question about
     public List<Order.Order> OrderHistory
     {
-        get => OrderHistory;
+        get => orderHistory;
         set {
             if (IsAnonymous) return; 
-            OrderHistory = value;
+            orderHistory = value;
         }
     }
 

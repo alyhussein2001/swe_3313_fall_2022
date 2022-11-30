@@ -2,6 +2,7 @@
 using CoffeePointOfSale.Forms.Base;
 using CoffeePointOfSale.Services.Customer;
 using CoffeePointOfSale.Services.FormFactory;
+using CoffeePointOfSale.Services.CSVExtract;
 
 namespace CoffeePointOfSale.Forms;
 
@@ -40,6 +41,7 @@ public partial class FormManagement : FormNoCloseBase
 
     private void bCSV_Click(object sender, EventArgs e)
     {
-
+        CSVExtract csv = new CSVExtract(_customerService);
+        csv.Extract();
     }
 }

@@ -58,6 +58,7 @@ namespace CoffeePointOfSale.Forms
                 FormMain.currentCustomer.RewardPoints -= neededPoints;
                 display += "Points Spent: " + neededPoints + "\n";
                 display += "Points Reamaining: " + FormMain.currentCustomer.RewardPoints + "\n";
+                FormMain.currentCustomer.AddOrderToHistory(FormMain.currentOrder);
             }
 
             display += "Order:\n";

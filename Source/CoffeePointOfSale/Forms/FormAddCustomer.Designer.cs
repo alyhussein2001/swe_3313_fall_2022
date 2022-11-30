@@ -158,22 +158,8 @@
             this.label_addCustomer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label_addCustomer.Click += new System.EventHandler(this.label3_Click);
             // 
-
-            // label_addCustomer
-            // 
-            this.label_addCustomer.AutoSize = true;
-            this.label_addCustomer.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_addCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.label_addCustomer.Location = new System.Drawing.Point(544, 43);
-            this.label_addCustomer.Name = "label_addCustomer";
-            this.label_addCustomer.Size = new System.Drawing.Size(301, 47);
-            this.label_addCustomer.TabIndex = 10;
-            this.label_addCustomer.Text = "Add Customer";
-            this.label_addCustomer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label_addCustomer.Click += new System.EventHandler(this.label3_Click);
             // cust_data_error
             // 
-            this.cust_data_error.AutoSize = true;
             this.cust_data_error.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cust_data_error.ForeColor = System.Drawing.Color.Red;
             this.cust_data_error.Location = new System.Drawing.Point(580, 486);
@@ -187,7 +173,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(223)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(1330, 674);
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.label_addCustomer);
             this.Controls.Add(this.cust_data_error);
             this.Controls.Add(this.error);

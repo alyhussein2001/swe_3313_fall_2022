@@ -27,6 +27,7 @@ namespace CoffeePointOfSale.Forms
 
         private void FormAddCustomer_Load(object sender, EventArgs e)
         {
+            SetTitle("Add Customer");
             error.Hide();
             cust_data_error.Hide();
             invalidDataError.Hide();

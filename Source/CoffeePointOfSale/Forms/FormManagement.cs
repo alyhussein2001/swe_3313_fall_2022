@@ -31,7 +31,7 @@ public partial class FormManagement : FormNoCloseBase
 
     private void OnLoadFormManagement(object sender, EventArgs e)
     {
-        
+        SetTitle("Management");
     }
 
     private void txtDeleteThis_TextChanged(object sender, EventArgs e)

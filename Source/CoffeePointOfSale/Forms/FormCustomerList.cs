@@ -30,6 +30,7 @@ namespace CoffeePointOfSale.Forms
 
         private void FormCustomerList_Load(object sender, EventArgs e)
         {
+            SetTitle("Customer List");
             DemonstrateGettingCustomerList();
         }
 

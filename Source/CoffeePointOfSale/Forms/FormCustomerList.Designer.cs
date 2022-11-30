@@ -69,6 +69,7 @@ namespace CoffeePointOfSale.Forms
             this.listBox1.Location = new System.Drawing.Point(12, 11);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
+            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.listBox1.Size = new System.Drawing.Size(1300, 495);
             this.listBox1.TabIndex = 2;
             this.listBox1.UseTabStops = false;

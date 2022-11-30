@@ -102,10 +102,6 @@ namespace CoffeePointOfSale.Forms
             }
 
 
-            // JOEL
-            // Write whatever customer was just clicked on to the Customer Service here...something like this:
-            // _customerService.SetCurrentCustomer(this.customer)
-
             Close();
             FormFactory.Get<FormOrderDrink>().Show();
         }
